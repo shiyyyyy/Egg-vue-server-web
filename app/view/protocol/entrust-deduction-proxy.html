@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"></meta>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"></link>
+    <link href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/vant.css" rel="stylesheet" type="text/css"></link>
+    <link href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/important.css" rel="stylesheet" type="text/css"></link>
+    <link href="https://unpkg.com/animate.css@3.5.2/animate.min.css" rel="stylesheet" type="text/css"></link>
+    <link href="/public/css/common.css" rel="stylesheet" type="text/css"></link>
+    <script src="https://asks.oss-cn-beijing.aliyuncs.com/static/js/jquery-2.1.3.min.js"></script>
+    <script src="https://asks.oss-cn-beijing.aliyuncs.com/static/js/vueJs2.5.16.js"></script>
+    <script src="https://asks.oss-cn-beijing.aliyuncs.com/static/js/vant.js"></script>
+    <title>授权扣款委托书</title>
+    <style>
+        .reg-agreement {
+            background: #fff;
+            /* color:#677887; */
+            color: #000;
+            line-height: 24px;;
+        }
+        .reg-agreement .reg-wrap {
+            padding: 30px 15px;
+            margin-bottom: 48.75px;
+        }
+        .reg-agreement h1 {
+            margin: 0;
+            font-size: 2.2em;
+            text-align: center;
+            font-weight: bold;
+            padding-bottom: 28px;
+        }
+        .reg-agreement h2 {
+            margin: 0;
+            font-weight: bold;
+            font-size: 1.9em;
+            padding: 12px 0;
+            text-align: center;
+        }
+        .reg-agreement h3 {
+            font-weight: bold;
+            font-size: 1.6em;
+            margin-bottom: 6px;
+        }
+        .reg-agreement h3.top {
+            margin-top:14px;
+        }
+        .reg-agreement p.normal {
+            text-indent: 0em;
+            margin-bottom: 14px;
+        }
+        .reg-agreement p {
+            text-indent: 2em;
+            font-size:1.2em ;
+            line-height: 26px;
+            margin:0;
+        }
+        .reg-agreement table.debit {
+            border: 1px solid #8e8e8e;
+            border-collapse: collapse;
+            width: 90%;
+            text-align: left;
+            margin-left: 5%;
+        }
+        .reg-agreement table.debit tr td:first-child {
+            width: 40%;
+        }
+        .reg-agreement table th, .reg-agreement table td {
+            font-weight: normal;
+            border-bottom: 1px solid #8e8e8e;
+            border-right: 1px solid #8e8e8e;
+            padding: 1px;
+        }
+        .reg-agreement p.common {
+            text-indent: 0em;
+        }
+    </style>
+</head>
+<body>
+<div id="app" style="height:100%">
+    <div class="reg-agreement" style="height: 100%">
+        <div class="reg-wrap">
+            <h1>授权扣款委托书</h1>
+            <h3>授权人：<%-data.userName%></h3>
+            <h3>被授权人：<%- importantInfo.version == 0?importantInfo.importantCompanyName:data.companyName%></h3>
+            <p class="common">现授权人郑重声明已仔细阅读、理解下述各项规定并同意遵守：</p>
+            <p>1. 授权人同意被授权人委托银行或第三方支付机构从本授权书指定的账户内以约定的资费标准划付应付的费用。</p>
+            <p>2. 授权人在指定账户内必须留有足够余额，否则因账户余额不足或不可归责于被授权人的委托方的任何事由，导致无法及时扣款或扣款错误、失败，责任由授权人自行承担。</p>
+            <p>3. 本授权书自授权人点击确认之日起生效，至授权人书面通知被授权人并经其同意后方可中止或终止授权，或授权人与被授权人协商确认授权账户终止时终止。</p>
+            <p>4. 授权人拟中止、终止授权或变更账户、通讯地址的，需提前30个工作日向被授权人递交书面通知，否则自行承担可能造成的损失。</p>
+            <p>5. 授权人保证本授权书的真实性、合法性、有效性，被授权人依据本授权书进行的委托扣款操作引起的一切法律纠纷或风险，由授权人独立承担或解决。</p>
+            <p>6. 授权人知悉并同意，如授权人在接受被授权人信用服务期间申请并绑定新的银行卡的，被授权人有权直接从新银行卡中直接执行本委托书中的委托事项，即从新银行卡账户中代扣应还款项，而非下述银行卡号。</p>
+            <p>7. 授权人资料：</p>
+            <h3>开户姓名：<%-data.userName%></h3>
+            <h3>开户银行：<%-data.bankName%></h3>
+            <h3>银行卡号：<%-data.cardNo%></h3>
+            <h3>身份证号：<%-data.identification%></h3>
+            <h3>联系电话：<%-data.mobile%></h3>
+            <p style="text-align: right;">授权人点击确认</p>
+            <h3 style="text-align: right">{{date ? date : ' 年 月 日'}}</h3>
+            <!-- <table class="debit" >
+                <tr>
+                    <td>开户姓名</td>
+                    <td><%-data.userName%></td>
+                </tr>
+                <tr>
+                    <td>开户银行</td>
+                    <td><%-data.bankName%></td>
+                </tr>
+                <tr>
+                    <td>银行卡号</td>
+                    <td><%-data.cardNo%></td>
+                </tr>
+                <tr>
+                    <td>身份证号</td>
+                    <td><%-data.identification%></td>
+                </tr>
+                <tr>
+                    <td>联系电话</td>
+                    <td><%-data.mobile%></td>
+                </tr>
+            </table> -->
+            <!-- <p class="common" style="text-align: right">授权人签字：<%-data.userName%></p> -->
+            <!-- <p class="common" style="text-align: right"><%-data.date%></p> -->
+            <!-- <% if(data.uid !=undefined && data.uid!=null && data.uid !=''){ %>
+                <p class="common" style="text-align: right">您的账号ID：<%-data.uid%></p>
+            <% } %>
+            <% if(data.phoneNo !=undefined && data.phoneNo!=null && data.phoneNo!=''){ %>
+                <p class="common" style="text-align: right">您的登录手机号：<%-data.phoneNo%></p>
+            <% } %> -->
+
+        </div>
+    </div>
+
+
+
+</div>
+
+</body>
+<script>
+
+  "use strict";
+
+  var app = new Vue({
+    el: '#app',
+    data: function data() {
+      return {
+        title: '授权扣款委托书',
+        date:'<%-data.date%>',
+      };
+    },
+    created: function created() {
+      this.isIosOrAndroid();
+    },
+    methods: {
+      isIosOrAndroid: function isIosOrAndroid() {
+        var browser = {
+          versions: function () {
+            var u = navigator.userAgent,
+              app = navigator.appVersion;
+            return {
+              //移动终端浏览器版本信息
+              ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+              //ios终端
+              android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1 //android终端或uc浏览器
+
+            };
+          }(),
+          language: (navigator.browserLanguage || navigator.language).toLowerCase()
+        };
+
+        if (browser.versions.android === true) {
+          this.type = 'android';
+          window.installment_installment.updateTitle(this.title);
+        } else {
+          this.type = 'ios';
+          window.webkit.messageHandlers.installment_installment.postMessage({
+            type: 'title',
+            title: this.title
+          });
+        }
+      },
+      pushBack: function pushBack() {
+        if (this.type == 'ios') {
+          window.webkit.messageHandlers.installment_installment.postMessage({
+            type: 'pushback'
+          }); // 返回首页
+        } else {
+          window.installment_installment.finish();
+        }
+      }
+    }
+  });
+</script>
+</html>

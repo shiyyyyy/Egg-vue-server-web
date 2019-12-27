@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1, maximum-scale=1,user-scalable=no">
+    <title><%-data.appName%></title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/important.css" rel="stylesheet" type="text/css" />
+    <link href="/public/css/common.css" rel="stylesheet" type="text/css" />
+    <script src="https://asks.oss-cn-beijing.aliyuncs.com/static/js/jquery-2.1.3.min.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-size: 62.5%;
+            background-color: #fff;
+            font-family: none;
+            color: #000000;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        ul, li {
+            margin: 0px;
+            padding: 0px;
+        }
+        .col-xs-12{
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        .scroll {
+            width: 100%;
+            float: left;
+            color: #000000;
+            background: #ffffff;
+        }
+
+        .padding0 {
+            padding: 0px;
+        }
+
+        .clickDown {
+            height: 42px;
+            line-height: 42px;
+            color: #fff;
+            background: #365AF7;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 26px;
+            margin-bottom: 19px;
+        }
+
+        .text-space {
+            margin: 23px 0px 24px;
+        }
+
+        .c-8f8f8f {
+            color: #8f8f8f;
+        }
+        .bold{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="scroll">
+
+    <div class="col-xs-12 padding0">
+        <img src="/public/images/jielemeBanner.png" width="100%">
+    </div>
+    <div class="col-xs-12  f-32 text-center" style=" font-weight:bold;"><%-data.appName%>企业版</div>
+    <div class="col-xs-12 c-666666  f-24 text-center bold" style="margin-top: 11px;">版本：V<%-data.version%>（更新于<%-data.date%>）</div>
+    <div style="padding: 0 38px;" class="col-xs-12">
+        <!-- <div class="col-xs-1"></div> -->
+        <a href="javascript:void(0)" class="downBtn">
+            <div class="f-30 clickDown" onclick="downLoadIos()" style="font-weight: 400;">点击下载app</div>
+        </a>
+        <!-- <div class="col-xs-1"></div> -->
+    </div>
+    <!--<div class="col-xs-12 f-24 text-center" style="color: red;">安装前请先卸载5.3.4版本</div>-->
+    <div class="col-xs-12 padding0" style="height: 8px;background: #E9E9E9;margin: 10px 0px"></div>
+    <div class="col-xs-12 f-32 text-center c-333333" style=" font-weight:bold; margin-top: 14px;">安装步骤</div>
+    <div class="col-xs-12 f-26 bold text-space">因苹果公司的政策原因，在iOS系统中首次安装企业版应用时会出现"未受信任的企业级开发者"提示</div>
+    <div class="col-xs-12">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+            <img src="/public/images/jieleme1.png" width="100%" alt="">
+        </div>
+        <div class="col-xs-2"></div>
+    </div>
+    <div class="col-xs-12 f-26 bold text-space" style="margin-bottom: 0px">解决办法如下（以iOS12系统为例）：</div>
+    <div class="col-xs-12 f-26 bold" style="margin: 27px 0 23px;">1. 在手机中打开设置功能，选择 <span style="color: #365AF7">"通用”</span></div>
+    <div class="col-xs-12">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+            <img src="/public/images/jieleme2.png" width="100%" alt="">
+        </div>
+        <div class="col-xs-2"></div>
+    </div>
+    <div class="col-xs-12 f-26 bold" style="margin: 24px 0 23px;">2. 在通用中，选择 <span style="color: #365AF7">"设备管理"</span>功能</div>
+    <div class="col-xs-12">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+            <img src="/public/images/jieleme3.png" width="100%" alt="">
+        </div>
+        <div class="col-xs-2"></div>
+    </div>
+    <div class="col-xs-12 f-26 bold"  style="margin: 24px 0 23px;">3. 在描述文件与设备管理中的企业级应用分类中，选择要安装的企业应用的文件名称(与打开时的提示一致)，点击进入</div>
+    <div class="col-xs-12">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+            <img src="/public/images/jieleme4.png" width="100%" alt="">
+        </div>
+        <div class="col-xs-2"></div>
+    </div>
+    <div class="col-xs-12 f-26 bold " style="margin: 24px 0 23px;">4. 进入企业签名页面后，确认企业签名中的公司名称与应用名称后，点击信任 <span style="color: #365AF7">"企业签名公司名称"</span>
+    </div>
+    <div class="col-xs-12">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+            <img src="/public/images/jieleme5.png" width="100%" alt="">
+        </div>
+        <div class="col-xs-2"></div>
+    </div>
+    <div class="col-xs-12 f-26 bold" style="margin: 24px 0 23px;">5. 回到桌面，重新打开应用即可使用</div>
+</div>
+</body>
+<script>
+    $(function(){
+        var type;
+        var browser = {
+            versions: function () {
+            var u = navigator.userAgent,
+                app = navigator.appVersion;
+            return {
+                //移动终端浏览器版本信息
+                ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+                //ios终端
+                android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1 //android终端或uc浏览器
+
+            };
+            }(),
+            language: (navigator.browserLanguage || navigator.language).toLowerCase()
+        };
+        if (browser.versions.android === true) {
+            type = '1'; //安卓
+        } else {
+            type = '2'; //ios
+        }
+
+    })
+    function downLoadIos() {
+        // $.get("__CONTROLLER__/md/source_id/{$source_id}/type/3");
+        var appurl = "<%-data.ios-%>"
+        window.location.href=`itms-services:///?action=download-manifest&url=${appurl}`
+        // window.location.href="<%-data.ios-%>";
+    }
+    window.onload = function() {
+        // 阻止双击放大
+        var lastTouchEnd = 0;
+        document.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        });
+        document.addEventListener('touchend', function(event) {
+            var now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        // 阻止双指放大
+        document.addEventListener('gesturestart', function(event) {
+            event.preventDefault();
+        });
+    }
+</script>
+</html>

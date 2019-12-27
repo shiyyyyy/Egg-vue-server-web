@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VIP说明</title>
+    <script src="https://asks.oss-cn-beijing.aliyuncs.com/static/js/jquery-2.1.3.min.js"></script>
+    <script src="https://asks.oss-cn-beijing.aliyuncs.com/static/js/vueJs2.5.16.js"></script>
+</head>
+
+<style>
+    html,body,#app2{
+        height: 100%;
+        width: 100%;
+    }
+    body {
+        margin: 0;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    #app{
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-image: url("/public/images/bg.png");
+        background-repeat:no-repeat;
+        background-size:100% auto;
+        -webkit-overflow-scrolling: touch;
+        position: relative;
+    }
+    .noRolling{
+        position:fixed;
+        /*top:0;*/
+        height: 100%;
+        overflow: hidden;
+    }
+
+    p {
+        margin: 0;
+    }
+
+    .banner {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .vipButton {
+        position: absolute;
+        right: 21px;
+        top: 0;
+        width: 57px;
+        height: auto;
+        z-index: 1;
+    }
+    .vipTitleImgBox{
+        width: 100%;
+        height: 0;
+        padding-bottom: 55%;
+        position: relative;
+    }
+    .vipTitleImgWrap{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+    .seizeSeat{
+        width: 100%;
+        height: 203px;
+    }
+
+    .vip {
+        width: calc(100% - 30px);
+        height: 560px;
+        margin-left: 15px;
+        background-image: url("/public/images/vipBg.png");
+        background-repeat:no-repeat;
+        background-size:100% 560px;
+    }
+    .bp{
+        width: 100%;
+        height: 54px;
+        position: relative;
+        top: 80px;
+        float: left;
+    }
+    .bp img{
+        width: 144px;
+        position: absolute;
+    }
+    .bp img:first-child{
+        left: 22px;
+    }
+    .bp img:last-child{
+        right: 22px;
+    }
+
+    .equityImg {
+        width: 192px;
+        height: 20px;
+        position: relative;
+        left: 50%;
+        margin-left: -96px;
+        top: 100px;
+    }
+    .exclusive{
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 95px;
+    }
+
+    .equityDiv {
+        width: calc(100% - 12%);
+        height: 85px;
+        padding: 0 6%;
+    }
+
+    .equityItem {
+        text-align: center;
+        color: #897159;
+        float: left;
+        width: 27%;
+        margin-right: 9%;
+        position: relative;
+    }
+
+    .equityItem img {
+        width: 47px;
+        height: 47px;
+    }
+
+    .equityItem p:nth-child(2) {
+        font-size: 12px;
+        font-weight: 500;
+        margin-top: 4px;
+        color: #111E3E;
+    }
+
+    .equityItem p:nth-child(3) {
+        font-size: 10px;
+        font-weight: 300;
+        margin-top: 1px;
+        color: #897159;
+    }
+    .triangle{
+        width: 8px!important;
+        height: 12px!important;
+        position: absolute;
+        bottom: 12px;
+        right: 0px;
+    }
+
+    .bottom{
+        width: 100%;
+        height: 74px;
+    }
+    .bottom img{
+        width: 184px;
+        height: 12px;
+        position: absolute;
+        left: 50%;
+        margin-left: -92px;
+        top: 30px;
+    }
+
+    /* VIP会员详细规则 */
+    .mask{
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: 10;
+        background-color: rgba(0,0,0,0.8);
+        top: 0;
+        left: 0;
+    }
+    .outerRule{
+        width: 300px;
+        position: fixed;
+        left: 50%;
+        margin-left: -150px;
+        top: 50%;
+        margin-top: -205px;
+        z-index: 15;
+    }
+    .rule{
+        width: 100%;
+        border-bottom-right-radius:8px;
+        border-bottom-left-radius:8px;
+        overflow: hidden;
+    }
+    .ruleContent{
+        width: 100%;
+        height: 296px;
+        background-color: #ffffff;
+        overflow: hidden;
+        border-bottom-right-radius:8px;
+        border-bottom-left-radius:8px;
+        position: relative;
+    }
+    .ruleContentInside{
+        width: calc(100% - 40px);
+        /*height: 100%;*/
+        height: 250px;
+        text-align: justify;
+        padding: 20px 20px 0 20px;
+        color: #333333;
+        font-size: 16px;
+        overflow: scroll!important;
+        z-index: 21;
+        -webkit-overflow-scrolling: touch;
+    }
+    .rule img{
+        width: 100%;
+        position: relative;
+    }
+    .translucent{
+        width:100%;
+        height:79px;
+        background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+        position: absolute;
+        bottom: 0px;
+        z-index: 25;
+        border-bottom-right-radius:8px;
+        border-bottom-left-radius:8px;
+        overflow: hidden;
+    }
+    .blockDiv{
+        width: calc(100% - 40px);
+        height: 32px;
+        position: absolute;
+        background-color: #ffffff;
+        bottom: 0;
+        z-index: 15;
+    }
+    .closeButton{
+        width: 41px;
+        height: 41px;
+        position: absolute;
+        left: 50%;
+        margin-left: -20.5px;
+        bottom: 0;
+    }
+
+    /* VIP增值服务 */
+    .service{
+        width: 270px;
+        height: 315px;
+        position: fixed;
+        z-index: 15;
+        left: 50%;
+        margin-left: -135px;
+        display: block;
+        top: 50%;
+        margin-top: -157.5px;
+        border-bottom-right-radius:8px;
+        border-bottom-left-radius:8px;
+        overflow: hidden;
+    }
+    .service img{
+        width: 100%;
+    }
+    .serviceContent{
+        width: calc(100% - 56px);
+        background-color: #ffffff;
+        margin-top: -5px;
+        padding: 15px 28px 0 28px;
+        border-bottom-right-radius:8px;
+        border-bottom-left-radius:8px;
+        overflow: hidden;
+        text-align: center;
+    }
+    .serviceContent img{
+        width: 159px!important;
+        margin: 15px 0 20px 0;
+    }
+    .switchButton{
+        color: #764F22;
+        font-size: 16px;
+        line-height: 25px;
+        border-bottom: solid 2px #764F22;
+        display: inline-block;
+    }
+    .serviceP{
+        text-indent:2em;
+        color: #333333;
+        /*font-size: 16px;*/
+        font-size: 1em;
+        font-weight:400;
+        line-height:22px;
+        margin-top: 15px;
+        text-align: justify;
+    }
+
+
+    /* VIP增值服务确认弹窗 */
+    .confirm{
+        width: 270px;
+        height: 106px;
+        position: fixed;
+        left: 50%;
+        margin-left: -135px;
+        top: 50%;
+        margin-top: -53px;
+        background:rgba(255,255,255,1);
+        border-radius:10px;
+        z-index: 15;
+    }
+    .hope{
+        color: #333333;
+        font-weight: 600;
+        margin: 23px 0 17px 0;
+        text-align: center;
+        font-size: 15px;
+    }
+    .hLine{
+        width:100%;
+        height:1px;
+        background-color:#E8E8E9;
+    }
+    .confirmDown{
+        width: 100%;
+        height: 40px;
+        display: flex;
+        margin-top: 2px;
+        justify-content: space-around;
+    }
+    .confirmDown p{
+        font-size: 15px;
+        font-weight:400;
+        line-height: 40px;
+    }
+    .confirmDown p:first-child{
+        color: #CCB082;
+        margin-left: 25px;
+    }
+    .confirmDown div:nth-child(2){
+        width: 1px;
+        height: calc(100% + 3px);
+        background: #E8E8E9;
+        overflow: hidden;
+        margin-top: -2px;
+    }
+    .confirmDown p:last-child{
+        color: #764F22;
+        margin-right: 25px;
+    }
+    .bottomDiv{height: 92px;width:300px;position: absolute;bottom: -60px;z-index: 100}
+
+    @media screen and (max-width: 320px) {
+        .ruleContent{
+            height: 305px;
+        }
+        .equityItem {
+            width: 29%;
+            margin-right: 6%;
+        }
+        .equityDiv {
+            width: calc(100% - 12%);
+            padding: 0 6%;
+        }
+        .outerRule{
+            width: 250px;
+            margin-left: -125px;
+        }
+        .bottomDiv{
+            height: 92px;width:250px;bottom: -100px;
+        }
+
+        .closeButton{
+            bottom: 40px;
+        }
+        .bp{
+            width: 100%;
+            height: 54px;
+            position: relative;
+            top: 80px;
+            float: left;
+        }
+        .bp img{
+            width: 125px;
+            position: absolute;
+        }
+        .bp img:first-child{
+            left: 15px;
+        }
+        .bp img:last-child{
+            right: 15px;
+        }
+    }
+
+    [v-cloak]{
+        display: none;
+    }
+
+</style>
+
+<body unselectable="on" style="-moz-user-select:none;-webkit-user-select:none;" onselectstart="return false;">
+<div id='app2'>
+    <div id="app">
+        <!--<div class="banner">-->
+        <!--<img class="vipBanner" src="/public/images/banner.png" width="100%">-->
+        <!--<img class="vipButton" src="/public/images/vipButton.png" @click="vipButton">-->
+        <!--</div>-->
+
+        <img class="vipButton" src="/public/images/vipButton.png" @click="vipButton">
+
+        <div class="vipTitleImgBox">
+            <div class="vipTitleImgWrap">
+                <img src="/public/images/vipTitle.png" width="100%" alt="">
+            </div>
+        </div>
+        <div class="vip">
+            <div class="bp">
+                <img src="/public/images/borrow.png">
+                <img src="/public/images/province.png">
+            </div>
+            <img class="equityImg" src="/public/images/equity.png">
+            <!-- 第一排 -->
+            <div class="exclusive">
+                <div class="equityDiv" style="margin-top: 26px">
+                    <div class="equityItem">
+                        <img src="/public/images/icon1.png">
+                        <p>多易贷借款</p>
+                        <p>全部取现</p>
+                    </div>
+                    <div class="equityItem">
+                        <img src="/public/images/icon2.png">
+                        <p>信用良好</p>
+                        <p>快速提额</p>
+                    </div>
+                    <div class="equityItem" style="margin-right: 0">
+                        <img src="/public/images/icon3.png">
+                        <p>VIP通道</p>
+                        <p>极速审批</p>
+                    </div>
+                </div>
+                <!-- 第二排 -->
+                <div class="equityDiv" style="margin-top: 33px">
+                    <div class="equityItem">
+                        <img src="/public/images/icon4.png">
+                        <p>专属服务</p>
+                        <p>提高通过率</p>
+                    </div>
+                    <div class="equityItem">
+                        <img src="/public/images/icon5.png">
+                        <p>7×24小时</p>
+                        <p>极速放款</p>
+                    </div>
+                    <div class="equityItem" style="margin-right: 0">
+                        <img src="/public/images/icon6.png">
+                        <p>提前结清</p>
+                        <p>不收取手续费</p>
+                    </div>
+                </div>
+                <!-- 第三排 -->
+                <div class="equityDiv" style="margin-top: 33px">
+                    <div class="equityItem">
+                        <img src="/public/images/icon7.png">
+                        <p>商品免息</p>
+                        <p>最高12期</p>
+                    </div>
+
+                    <div class="equityItem" v-if="vipStatus == 0" @click="serviceButton()">
+                        <img src="/public/images/icon8.png">
+                        <p>增值服务</p>
+                        <p>优惠更多</p>
+                        <img class="triangle" src="/public/images/triangle.png">
+                    </div>
+                    <div class="equityItem" v-else>
+                        <img src="/public/images/icon8.png">
+                        <p>增值服务</p>
+                        <p>优惠更多</p>
+                    </div>
+
+                    <div class="equityItem" style="margin-right: 0">
+                        <img src="/public/images/icon9.png">
+                        <p>更多权益</p>
+                        <p>敬请期待</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom">
+            <div style="position: relative">
+                <img src="/public/images/bottom.png">
+            </div>
+        </div>
+    </div>
+
+
+    <div v-cloak>
+
+        <div class="mask" id="moceng" v-show="moceng" ></div>
+
+        <!-- VIP会员详细规则 -->
+        <div  class="outerRule " v-show="ruleMask">
+            <div class="rule">
+                <img src="/public/images/ruleTitle.png" style="display:block;" class="vipNoScroll1">
+                <div class="ruleContent">
+                    <div class="ruleContentInside">
+                        <p>1.开通VIP即可享受VIP特权及会员增值服务；</p>
+                        <p>2.即日起推出VIP限时免费开通活动，活动期间，凡新注册用户在注册成功后立即升级为VIP,有效期3个月，活动截止时间以平台规则为准；</p>
+                        <p>3.免费VIP服务有效期以平台活动为准，自服务开通之日起计算，服务期满后将自动取消VIP身份，不再享受VIP特权；</p>
+                        <p>4.在VIP有效期满后，如想继续享受VIP服务，需手动申请开通或续费，目前开通入口暂未开放，具体开放时间待定；</p>
+                        <p>5.VIP用户可享多重权益，具体权益将根据平台运营的不同阶段进行调整，特权调整变化不会通知用户，但您可以在VIP页面内查看，具体权益以VIP活动页面为准，申请借款或购物时只能享受当前VIP页面内展示的权益；</p>
+                        <p>6.特别说明：VIP增值服务权益</p>
+                        <p>VIP用户自动开启增值服务，开启即默认享受增值权益，并同意支付相关费用，具体费用及收费规则以平台说明为准。您可以手动开启或关闭增值服务，点击“VIP专属权益”下方的“增值服务”进行操作，关闭后不再享受增值服务，但不影响先前增值服务的享受；</p>
+                        <p>7.未来我们将持续发展会员制业务，为您提供更多的优惠和特权，敬请期待；</p>
+                        <p>8.<%-data.appName%>平台保留法律范围内允许的对活动的最终解释权。</p>
+                    </div>
+                </div>
+                <div class="translucent"></div>
+            </div>
+            <div class="bottomDiv vipNoScroll2"  >
+                <img class="closeButton" src="/public/images/close.png" @click="closeButton">
+            </div>
+        </div>
+        <!--    &lt;!&ndash; VIP增值服务弹窗 &ndash;&gt;-->
+        <div id="service" class="service" v-show="serviceMask" >
+            <img src="/public/images/serviceTitle.png">
+            <div class="serviceContent">
+                <p class="switchButton" @click="openConfirm">{{information}}</p>
+                <p class="serviceP">该项服务主要为包括减免手续在内的多重VIP尊享权益，在每笔借款申请时仅需缴纳10元费用，申请通过后收取，即可享受最多240元的费用减免。</p>
+                <img src="/public/images/confirm.png" width="159" @click="closeButton">
+            </div>
+        </div>
+        <!--    &lt;!&ndash; VIP增值服务确认弹窗 &ndash;&gt;-->
+        <div class="confirm" v-show="confirmMask">
+            <p class="hope">您希望开通还是关闭增值服务？</p>
+            <div class="hLine"></div>
+            <div class="confirmDown">
+                <p @click="switchButton(1)">关闭</p>
+                <div></div>
+                <p @click="switchButton(0)">开启</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+</body>
+
+<script>
+    var app = new Vue({
+        el: '#app2',
+        data: function data() {
+            return {
+                title: 'VIP说明',
+                ruleMask:false,//VIP规则弹窗
+                serviceMask:false,//VIP增值服务弹窗
+                confirmMask:false,//VIP增值服务确认弹窗
+                vipStatus:"",//0-->VIP    1-->不是VIP
+                token:"",//用户token
+                valueAddedService:"",//0-->开通VIP增值服务   1-->没有开通VIP增值服务
+                scrollTop: undefined, // 距离顶端的值
+                moceng:false,
+                information:"",//开通或关闭信息
+            };
+        },
+        mounted:function mounted() {
+            var that = this;
+            that.token = '<%-token%>';
+            var result = '<%-result%>';
+            that.vipStatus = JSON.parse(result).data.vipStatus;
+
+            function getCookie(cookie_name) {
+                var allcookies = document.cookie;
+                //索引长度，开始索引的位置
+                var cookie_pos = allcookies.indexOf(cookie_name);
+
+                // 如果找到了索引，就代表cookie存在,否则不存在
+                if (cookie_pos != -1) {
+                    // 把cookie_pos放在值的开始，只要给值加1即可
+                    //计算取cookie值得开始索引，加的1为“=”
+                    cookie_pos = cookie_pos + cookie_name.length + 1;
+                    //计算取cookie值得结束索引
+                    var cookie_end = allcookies.indexOf(";", cookie_pos);
+                    if (cookie_end == -1) {
+                        cookie_end = allcookies.length;
+                    }
+                    //得到想要的cookie的值
+                    var value = unescape(allcookies.substring(cookie_pos, cookie_end));
+
+                }
+                return value;
+            }
+            this.csrf = getCookie('csrfToken');
+            document.getElementById("moceng").ontouchstart = function (event) {
+                document.getElementById("moceng").ontouchmove =function (event) {
+                    event.preventDefault();
+                    return false
+                }
+                event.preventDefault();
+                return false
+            }
+            document.querySelector(".confirm").ontouchstart = function (event) {
+                document.querySelector(".confirm").ontouchmove =function (event) {
+                    event.preventDefault();
+                    return false
+                }
+            }
+            $.post('/vip/valueAddedService',{_csrf:that.csrf,token:that.token}, function (result) {
+                if(result.data.valueAddedService == 0){
+                    that.information = "您已开通VIP增值服务"
+                }else{
+                    that.information = "您已关闭VIP增值服务"
+                }
+            });
+        },
+        created: function created() {
+            this.isIosOrAndroid();
+            // 阻止双击放大
+            var lastTouchEnd = 0;
+            document.addEventListener('touchstart', function(event) {
+                if (event.touches.length > 1) {
+                    event.preventDefault();
+                }
+            });
+            document.addEventListener('touchend', function(event) {
+                var now = (new Date()).getTime();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+
+            // 阻止双指放大
+            document.addEventListener('gesturestart', function(event) {
+                event.preventDefault();
+            });
+        },
+        methods: {
+            isIosOrAndroid: function isIosOrAndroid() {
+                var browser = {
+                    versions: function () {
+                        var u = navigator.userAgent,
+                            app = navigator.appVersion;
+                        return {
+                            //移动终端浏览器版本信息
+                            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+                            //ios终端
+                            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1 //android终端或uc浏览器
+
+                        };
+                    }(),
+                    language: (navigator.browserLanguage || navigator.language).toLowerCase()
+                };
+
+                if (browser.versions.android === true) {
+                    this.type = 'android';
+                    window.installment_installment.updateTitle(this.title);
+                } else {
+                    this.type = 'ios';
+                    window.webkit.messageHandlers.installment_installment.postMessage({
+                        type: 'title',
+                        title: this.title
+                    });
+                }
+            },
+            vipButton:function vipButton() {
+                var that = this;
+                that.ruleMask = true;
+                that.oppoMask(1);
+            },
+            openConfirm:function openConfirm(){
+                var that = this;
+                that.serviceMask = false;
+                that.confirmMask = true;
+            },
+            closeButton:function closeButton(){
+                var that = this;
+                that.ruleMask = false;
+                that.serviceMask = false;
+                that.confirmMask = false;
+                that.closeMask();
+            },
+            serviceButton:function serviceButton() {
+                var that = this;
+                that.serviceMask = true;
+                if(that.vipStatus == 0){
+                    that.oppoMask(2);
+                    // $.post('/vip/valueAddedService',{_csrf:that.csrf,token:that.token}, function (result) {
+                    //     that.valueAddedService = result.data.valueAddedService;
+                    //     that.serviceMask = true;
+                    // });
+                }
+            },
+            switchButton:function switchButton(s) {
+                var that = this;
+                $.post('/vip/changeValueAddedService',{_csrf:that.csrf,token:that.token,valueAddedService:s}, function (result) {
+                    $.post('/vip/valueAddedService',{_csrf:that.csrf,token:that.token}, function (result) {
+                        if(result.data.valueAddedService == 0){
+                            that.information = "您已开通VIP增值服务"
+                        }else{
+                            that.information = "您已关闭VIP增值服务"
+                        }
+                        that.closeButton();
+                    });
+                });
+            },
+            // 打开弹层 要做的事
+            oppoMask:function oppoMask(n) {
+                this.moceng = true
+                if(n == 1){
+                    document.querySelector(".vipNoScroll1").ontouchstart = function (event) {
+                        document.querySelector(".vipNoScroll1").ontouchmove =function (event) {
+                            event.preventDefault();
+                            return false
+                        }
+
+                    }
+                    document.querySelector(".vipNoScroll2").ontouchstart = function (event) {
+                        document.querySelector(".vipNoScroll2").ontouchmove =function (event) {
+                            event.preventDefault();
+                            return false
+                        }
+                    }
+                }
+                if(n == 2){
+                    document.getElementById("service").ontouchstart = function (event) {
+                        document.getElementById("service").ontouchmove =function (event) {
+                            event.preventDefault();
+                            return false
+                        }
+
+                    }
+                }
+            },
+            // 弹层关闭之前 要做的事
+            closeMask:function closeMask() {
+                this.moceng = false
+            }
+        }
+    });
+</script>
+
+</html>
+
+

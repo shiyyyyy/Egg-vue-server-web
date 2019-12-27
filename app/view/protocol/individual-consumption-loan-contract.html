@@ -1,0 +1,503 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"></meta>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"></link>
+    <link href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/important.css" rel="stylesheet" type="text/css"></link>
+    <script src="https://asks.oss-cn-beijing.aliyuncs.com/static/js/jquery-2.1.3.min.js"></script>
+    <script src="https://asks.oss-cn-beijing.aliyuncs.com/static/js/vueJs2.5.16.js"></script>
+    <title>个人借款合同</title>
+    <style>
+        html,body{width: 100%;height: 100%;}
+        body{margin: 0px;padding: 0px;font-size: 62.5%;background-color: #FFFFFF;}
+        a{text-decoration: none;}
+        p{margin:0;padding:0}
+        h1,h2,h3{margin:0;padding:0}
+        html,body{
+            font-family: 'SimSun';
+        }
+        .reg-agreement {
+            background: #fff;
+            /* color:#677887; */
+            color: #000;
+            line-height: 24px;
+        }
+        .reg-agreement .reg-wrap {
+            padding: 30px 15px;
+            margin-bottom: 48.75px;
+        }
+        .reg-agreement h1 {
+            margin: 0;
+            font-size: 2.2em;
+            text-align: center;
+            font-weight: bold;
+            padding-bottom: 28px;
+        }
+        .reg-agreement h2 {
+            margin: 0;
+            font-weight: bold;
+            font-size: 1.9em;
+            padding: 12px 0;
+            text-align: center;
+        }
+        .reg-agreement h3 {
+            font-weight: bold;
+            font-size: 1.6em;
+            margin-bottom: 6px;
+        }
+        .reg-agreement h3.top {
+            margin-top:14px;
+        }
+        .reg-agreement p.normal {
+            text-indent: 0em;
+            margin-bottom: 14px;
+        }
+        .reg-agreement p {
+            text-indent: 2em;
+            font-size:1.2em ;
+            line-height: 26px;
+            margin:0;
+            word-break: break-all;
+            word-wrap: break-word;
+        }
+        .reg-agreement p.common {
+            text-indent: 0em;
+        }
+        .bold{
+            font-weight: 700;
+        }
+        .right{
+            text-align: right;
+        }
+        .underline{
+            text-decoration: none;
+            border-bottom: 1px solid;
+            padding-bottom: 2px;
+            padding-left: 12px;
+            padding-right: 12px;
+            display: inline-block;
+            text-indent: 0;
+        }
+        .w-150{
+            width: 150px;
+        }
+        .ft-14{
+            font-size: 14px;
+        }
+        .reg-agreement p.textIndex0{
+            text-indent: 0;
+        }
+        .reg-agreement p.big-title{
+            font-size: 37px;
+            font-weight: 700;
+            text-align: center;
+            text-indent: 0;
+            line-height: 37px;
+        }
+        .reg-agreement p.title{
+            font-size: 26px;
+            font-weight: 700;
+            text-align: center;
+            text-indent: 0;
+            line-height: 26px;
+        }
+        @media screen and (max-width: 375px){
+            .reg-agreement p.title{
+                padding-top: 80px;
+            } 
+        }
+        .min-w-100{
+            min-width: 100px;
+        }
+        .reg-agreement .text-indent-0{
+            text-indent: 0;
+        }
+        .reg-agreement .text-indent-2{
+            text-indent: 2em;
+        }
+        .d-center{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .d-center h3{
+            min-width: 325px;
+        }
+        .page{
+            height: 100vh;
+        }
+        sup{
+            font-size: 8px;
+        }
+    </style>
+</head>
+<body>
+<div id="app" style="height:100%">
+    <div class="reg-agreement" style="height: 100%">
+        <div class="reg-wrap">
+            <div :style="{minHeight: innerHeight + 'px'}">
+                <div>
+                    <p><img src="/public/images/hetong.png" width="24" alt="">合同编号：（河北柏乡农村商业银行股份有限公司）农信借字〔&nbsp;&nbsp;〕第&nbsp;&nbsp;号</p>
+                </div>
+                <div class="d-center" :style="{height: innerHeight/2 + 'px'}">
+                    <p class="big-title">个人借款合同</p>
+                </div>
+                <div>
+                    <div class="d-center">
+                        <h3>借款人： <span class="underline min-w-100"><%-data.userName || '&nbsp;'%></span></h3>
+                    </div>
+                    <div class="d-center">
+                        <h3>贷款人： <span class="underline min-w-100" style="font-size: 13px;">河北柏乡农村商业银行股份有限公司</span></h3>
+                    </div>
+                    <div class="d-center">
+                        <h3>共同借款人：<span class="underline min-w-100">&nbsp;</span></h3>
+                    </div>
+                    <div class="d-center">
+                        <h3>贷款种类：<span class="underline min-w-100">短期</span></h3>
+                    </div>
+                </div>
+            </div>
+
+            <div :style="{minHeight: innerHeight + 'px'}">
+                <br />
+                <br />
+                <h1>敬  请  注  意</h1>
+                <br />
+                <h3 class="text-indent text-indent-2">为了维护您的利益，请您在签署本合同前，仔细阅读如下注意事项：</h3>
+                <h3 class="text-indent text-indent-2">1．您已阅读本合同所有条款，并已悉知其含义；河北省农村信用社相关机构已对合同中的概念、术语等进行了明确具体的解释和说明；</h3>
+                <h3 class="text-indent text-indent-2">2．您已确保提交给贷款人的有关证件及资料是真实、合法、有效的；</h3>
+                <h3 class="text-indent text-indent-2">3．您已确认自己有权在本合同上签字，并知悉签署本合同后享有的权利和承担的义务；</h3>
+                <h3 class="text-indent text-indent-2">4．您已确知任何欺诈、违约行为均要承担相应的法律责任；</h3>
+                <h3 class="text-indent text-indent-2">5．您将本着诚实、信用的原则，自愿签订并依约履行本合同；</h3>
+                <h3 class="text-indent text-indent-2">6．请您使用钢笔或签字笔工整地填写需要您填写的内容。</h3>
+                <h3 class="text-indent text-indent-2">如您对本合同还有疑问之处，您可在签署之前向河北省农村信用社各级机构咨询。</h3>
+            </div>
+            
+            <p class="title">个 人 借 款 合 同</p>
+            <p class="right">（河北柏乡农村商业银行股份有限公司）农信借字&nbsp;&nbsp;第&nbsp;&nbsp;号</p>
+            <br />
+            <br />
+            <p class="textIndex0">借款人（甲方）：<span class="underline"><%-data.userName || '&nbsp;'%></span></p>
+            <p class="textIndex0">住所：<span class="underline"><%-data.address || '&nbsp;'%></span></p>
+            <p class="textIndex0">联系电话：<span class="underline"><%-data.mobile || '&nbsp;'%></span></p>
+            <p class="textIndex0">证件名称：<span class="underline">身份证</span>证件号码:<span class="underline"><%-data.identification || '&nbsp;'%></span></p>
+            <br />
+            <p class="textIndex0">贷款人（乙方）：<span class="underline">河北柏乡农村商业银行股份有限公司</span></p>
+            <p class="textIndex0">法定代表人（负责人）：<span class="underline">张志强</span></p>
+            <p class="textIndex0">住所：<span class="underline">河北省邢台市柏乡县城槐东大街北段路西</span></p>
+            <p class="textIndex0">联系电话：<span class="underline">031977215141</span></p>
+            <br />
+            <p class="textIndex0">共同借款人（丙方）：<span class="underline">&nbsp;</span></p>
+            <p class="textIndex0">住所：<span class="underline">&nbsp;</span></p>
+            <p class="textIndex0">联系电话：<span class="underline">&nbsp;</span></p>
+            <p class="textIndex0">证件名称：<span class="underline">&nbsp;</span>证件号码:<span class="underline">&nbsp;&nbsp;</span></p>
+            <br />
+            <p>根据有关法律法规和规章，经甲、乙、丙三方协商一致，订立本合同，共同信守执行。</p>
+            <p><span class="bold">第一条</span>  借款金额</p>
+            <p>甲方向乙方借款（币种）<span class="underline">人民币</span>金额（小写）<span class="underline"><%-data.money || '&nbsp;'%></span>元（大写)<span class="underline"><%-data.moneyCapital || '&nbsp;'%></span>；</p>
+            <p><span class="bold">第二条</span>  借款用途</p>
+            <p>借款用于<span class="underline"><%-data.loanPurpose || '&nbsp;'%></span>，未经乙方书面同意，甲方不得改变借款用途；</p>
+            <p><span class="bold">第三条</span>  支用方式</p>
+            <p>本合同“第一条”规定的借款金额采用以下第<span class="underline">壹</span>种方式支用。</p>
+            <p>（壹）一次性支用</p>
+            <p>借款期限为：从<span class="underline">&nbsp;</span>年<span class="underline">&nbsp;</span>月<span class="underline">&nbsp;</span>日起至<span class="underline">&nbsp;</span>年<span class="underline">&nbsp;</span>月<span class="underline">&nbsp;</span>日止。</p>
+            <p>本合同项下的借款期限起始日与贷款转存凭证（含借款借据、乙方计算机生成的电子借据等，下同）不一致时，以放款时的贷款转存凭证所载实际放款日期为准，以此计算借款期限。</p>
+            <p>贷款转存凭证是本合同的组成部分，与本合同具有同等法律效力。</p>
+            <p>一次性支用，即在借款合同及贷款转存凭证签订后，乙方一次性将全部借款额度发放至甲方在乙方处开立的结算账户或贷款专用账户内，提前还款的，已归还部分不可再次支用。</p>
+            <p>（贰）按以下计划支用</p>
+            <p>借款合同期限为：从<span class="underline">&nbsp;</span>年<span class="underline">&nbsp;</span>月<span class="underline">&nbsp;</span>日起至<span class="underline">&nbsp;</span>年<span class="underline">&nbsp;</span>月<span class="underline">&nbsp;</span>日止。</p>
+            <p>按计划支用是在本合同约定的借款合同期限内，按本合同约定的用款计划分笔次使用借款额度，最后一笔的到期日不得超过借款期限，已支用额度归还后不可再次使用。</p>
+            <p>按计划支用每笔借款的起始日与贷款转存凭证（含借款借据、乙方计算机生成的电子借据等，下同）不一致时，以该笔借款放款时的贷款转存凭证所载实际放款日期为准，以此计算每笔的借款期限。</p>
+            <p>贷款转存凭证是本合同的组成部分，与本合同具有同等法律效力。</p>
+            <p>甲方应按照下列计划支用款项，除非经乙方书面同意，甲方不得提前、推迟或取消支用：</p>
+            <p>1．<span class="underline">&nbsp;</span>年<span class="underline">&nbsp;</span>月<span class="underline">&nbsp;</span>日&nbsp;&nbsp;金额（大写）<span class="underline">&nbsp;</span>万元；</p>
+            <p>2．<span class="underline">&nbsp;</span>年<span class="underline">&nbsp;</span>月<span class="underline">&nbsp;</span>日&nbsp;&nbsp;金额（大写）<span class="underline">&nbsp;</span>万元；</p>
+            <p>3．<span class="underline">&nbsp;</span>年<span class="underline">&nbsp;</span>月<span class="underline">&nbsp;</span>日&nbsp;&nbsp;金额（大写）<span class="underline">&nbsp;</span>万元；</p>
+            <p>4．<span class="underline">&nbsp;</span>年<span class="underline">&nbsp;</span>月<span class="underline">&nbsp;</span>日&nbsp;&nbsp;金额（大写）<span class="underline">&nbsp;</span>万元；</p>
+            <p>5．<span class="underline">&nbsp;</span>年<span class="underline">&nbsp;</span>月<span class="underline">&nbsp;</span>日&nbsp;&nbsp;金额（大写）<span class="underline">&nbsp;</span>万元；</p>
+            <p>6．<span class="underline">&nbsp;</span>年<span class="underline">&nbsp;</span>月<span class="underline">&nbsp;</span>日&nbsp;&nbsp;金额（大写）<span class="underline">&nbsp;</span>万元；</p>
+            <p>……。</p>
+            <p>（叁）其他支用方式</p>
+            <p class="underline" style="display: block;">&nbsp;</p>
+            <p class="underline" style="display: block;">&nbsp;</p>
+
+            <p><span class="bold">第四条</span>  借款利率与罚息利率</p>
+            <p>一，借款利率（指年利率，下同）</p>
+            <p class="text-indent-0">（一）定价基准利率按下列第<span class="underline">贰</span>种约定执行</p>
+            <p class="text-indent-0">（壹）央行人民币贷款基准利率<span class="underline">&nbsp;</span>期限档次。</p>
+            <p class="text-indent-0">（贰）LPR利率<span class="underline">壹年</span>期限档次。</p>
+            <p class="text-indent-0">（二）借款利率定价公式按下列第<span class="underline">贰</span>种约定执行：</p>
+            <p class="text-indent-0">（壹）借款利率=央行贷款基准利率(上浮/下浮)<span class="underline">&nbsp;</span>%。</p>
+            <p class="text-indent-0"><span class="bold">（贰）</span>借款利率=LPR利率(贷款市场报价利率)（加/减）<span class="underline">7.85</span>%（原则上为0.05%的整数倍）。</p>
+            <p class="text-indent-0">（三）借款利率按下列第<span class="underline">壹</span>种约定执行：</p>
+            <p class="text-indent-0">（壹）固定利率。本合同项下所有借款实行固定利率，根据实际发放日定价基准利率和定价公式确定借款利率。在合同期限内，利率保持不变。</p>
+            <p class="text-indent-0">（贰）浮动利率。根据实际发放日（利率调整日）的定价基准利率和定价公式确定借款利率。</p>
+            <p>利率调整日按以下第<span class="underline">&nbsp;</span>种方式执行：A重定价周期为<span class="underline">&nbsp;</span>个月（原则上为12月的整数倍），自借款实际发放日起每满一个周期的对应日为合同利率调整日，当月无对应日的以该月最后一天为对应日；B<span class="underline">&nbsp;&nbsp;&nbsp;</span>。</p>
+            <p>合同期限内，如遇定价基准利率调整，不再通知借款人。</p>
+            <p class="text-indent-0">（叁）其他利率方式：<span class="underline">&nbsp;&nbsp;&nbsp;</span>。</p>
+            <p class="text-indent-0">（四）本合同项下发放的借款，如遇国家取消基准利率或者市场不再公布基准利率，贷款人有权根据同期的国家利率政策，按照公平诚信的原则，并参照行业惯例、利率状况等因素，重新确定借款利率后通知借款人。借款人有异议的，应与贷款人协商。自贷款人发出通知之日起五个工作日内协商不成的，贷款人有权提前收贷，借款人应当立即清偿剩余的借款本息。</p>
+            <p>二，罚息利率</p>
+            <p>（一）甲方未按合同用途使用贷款的，罚息利率为本条第一款约定的贷款利率上浮<span class="underline">100</span>%。</p>
+            <p>（二）本合同项下贷款逾期的，罚息利率为本条第一款约定的贷款利率上浮<span class="underline">0</span>%。</p>
+            <p>（三）同时出现逾期和挪用情形的贷款，应择其重计收罚息和复利。</p>
+            <p><span class="bold">第五条</span>  计息</p>
+            <p>一，贷款利息自贷款发放到甲方结算账户或贷款专用账户之日起计算。本合同项下的贷款按日计息。如甲方不能按照本合同约定的结息日付息，自次日起（计/不计）复利。</p>
+            <p>二，实行固定利率的贷款，结息时，按约定的利率计算利息。实行浮动利率的贷款，按各浮动期当期确定的利率计算利息；单个结息期内有多次利率浮动的，先计算各浮动期利息，结息日加总各浮动期利息计算该结息期内利息。</p>
+
+            <p><span class="bold">第六条</span>  提款条件</p>
+            <p>一，除乙方全部或部分放弃外，只有甲方持续满足下列前提条件，乙方才有义务发放贷款：</p>
+            <p>（一）甲方已办妥与本合同项下贷款有关的批准、登记、交付、保险及其他法定手续；</p>
+            <p>（二）本合同债权设有担保的，符合乙方要求的担保已合法设立且持续有效；</p>
+            <p>（三）甲方已经按照乙方的要求开立用于提款、还款的账户；</p>
+            <p>（四）乙方已经收到甲方借款额度支用申请书，并已经审核同意；</p>
+            <p>（五）甲方没有发生本合同所约定的任一违约事项或本合同约定的任何可能危及乙方债权安全的情形；</p>
+            <p>（六）法律、法规、规章或有权部门不禁止且不限制乙方发放本合同项下的贷款；</p>
+            <p>（七）其他条件：</p>
+            <p><span class="underline" style="min-width: 200px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>。</p>
+            <p>二，甲方应在拟提款日前<span class="underline">1</span>个工作日向乙方提交支用申请，并提出是采用乙方受托支付方式还是甲方自主支付方式的申请。甲方确认，乙方有权审核甲方相关资料是否符合本合同约定的支付条件，并对相应贷款的支付方式具有决定权。</p>
+            <p>三，在贷款发放和支付过程中，甲方出现以下情形的，乙方有权要求甲方补充提款条件和支付条件，或变更贷款支付方式、停止贷款资金的发放和支付：</p>
+            <p>（一）信用状况下降；</p>
+            <p>（二）贷款资金使用出现异常；</p>
+            <p>（三）违反其他合同义务的。</p>
+            <p><span class="bold">第七条</span>  发放与支付方式</p>
+            <p>乙方根据每笔贷款转存凭证约定的时间，将借款金额划入甲方在乙方处开立的结算账户或贷款专用账户内(账号／银行卡号<span class="underline">&nbsp;</span>)</p>
+            <p>甲方同意，自本合同生效后，乙方有权通过乙方受托支付和甲方自主支付的方式对结算账户或贷款专用账户中的贷款资金的支付进行监控和管理，以监督贷款资金按本合同的约定用途使用。</p>
+            <p>除符合本合同约定的自主支付情形外，本合同项下贷款一律使用受托支付方式。</p>
+            <p>一，受托支付</p>
+            <p>（一）采用受托支付方式的，甲方应向乙方提交具体的提款申请和支付委托及相关交易资料，包括但不限于：</p>
+            <p>1.支付用途是否符合本合同约定的用途的证明文件；</p>
+            <p>2.甲方与第三方签订的商务合同或真实反映甲方支付义务的书面文件；</p>
+            <p>3.相应发票或收据，如支付的同时无法取得，则甲方应在支付完成后及时补交对应的用款发票或收据；</p>
+            <p>4.合法有效的支付凭证；</p>
+            <p>5.乙方要求提交的其他证明材料。</p>
+            <p>（二）乙方有权根据本合同约定的用途，审核甲方提供的支付申请所列支付对象、支付金额信息是否与相应的商务合同等证明材料相符。</p>
+            <p>（三）审核同意后，乙方将贷款资金通过甲方在乙方开立的结算账户或贷款专用账户支付给符合合同约定用途的甲方交易对象。</p>
+            <p>（四）甲方应向乙方支付因贷款资金的支付而产生的汇划费，在该汇划费发生时，乙方有权按实际金额直接扣收。</p>
+            <p>二，自主支付</p>
+            <p>（一）有下列情形之一的，经乙方同意可以采取甲方自主支付方式：</p>
+            <p>1.甲方无法事先确定具体交易对象且金额不超过三十万元人民币的；</p>
+            <p>2.甲方交易对象不具备条件有效使用非现金结算方式的；</p>
+            <p>3.贷款资金用于生产经营且金额不超过五十万元人民币的；</p>
+            <p>4.法律法规规定的其他情形的。</p>
+            <p>（二）采用自主支付方式的，甲方应（定期）<span class="underline">&nbsp;</span>报告或告知乙方贷款资金支付情况。</p>
+            <p>乙方有权通过账户分析、凭证查验或现场调查等方式，核查贷款支付是否符合约定用途。</p>
+
+            <p><span class="bold">第八条</span>  还款和结息方式</p>
+            <p>一，本合同项下贷款按以下第<span class="underline">肆</span>种方式偿还：</p>
+            <p>（壹）等额本息，月供=本金×月利率×（1+月利率）<sup>月数</sup>/（1+月利率）<sup>月数-1</sup>；</p>
+            <p>（贰）等额本金，月供=本金/月数+（本金-已归还本金累计额）×月利率；</p>
+            <p>（叁）按年结息，到期还本，结息日固定为每年末月的20日，如借款本金的最后一次偿还日不在结息日，则未付利息应利随本清；</p>
+            <p>（肆）按<span class="underline">月</span>（月/季）结息，到期还本，结息日固定为每月/季末月的20日，如借款本金的最后一次偿还日不在结息日，则未付利息应利随本清；</p>
+            <p>（伍）按以下计划偿还本金，按<span class="underline">&nbsp;</span>（月/季）结息，结息日固定为每月/季末月的20日，最后一次偿还本金时利随本清。</p>
+            <p>1．<span class="underline">&nbsp;</span>年<span class="underline">&nbsp;</span>月<span class="underline">&nbsp;</span>日&nbsp;&nbsp;金额（大写）<span class="underline">&nbsp;</span>万元；</p>
+            <p>2．<span class="underline">&nbsp;</span>年<span class="underline">&nbsp;</span>月<span class="underline">&nbsp;</span>日&nbsp;&nbsp;金额（大写）<span class="underline">&nbsp;</span>万元；</p>
+            <p>3．<span class="underline">&nbsp;</span>年<span class="underline">&nbsp;</span>月<span class="underline">&nbsp;</span>日&nbsp;&nbsp;金额（大写）<span class="underline">&nbsp;</span>万元；</p>
+            <p>4．<span class="underline">&nbsp;</span>年<span class="underline">&nbsp;</span>月<span class="underline">&nbsp;</span>日&nbsp;&nbsp;金额（大写）<span class="underline">&nbsp;</span>万元；</p>
+            <p>5．<span class="underline">&nbsp;</span>年<span class="underline">&nbsp;</span>月<span class="underline">&nbsp;</span>日&nbsp;&nbsp;金额（大写）<span class="underline">&nbsp;</span>万元；</p>
+            <p>6．<span class="underline">&nbsp;</span>年<span class="underline">&nbsp;</span>月<span class="underline">&nbsp;</span>日&nbsp;&nbsp;金额（大写）<span class="underline">&nbsp;</span>万元；</p>
+            <p>……。</p>
+            <p>（陆）其他方式<span class="underline">&nbsp;&nbsp;&nbsp;</span>。</p>
+            <p>二，甲方应于每期还款日前在“第七条”所述甲方账户内存入足以偿还当期借款本息的款项，甲方同意乙方可直接从该账户中划收借款本息。该账户内资金不足以清偿当期借款本息，乙方有权决定是否划收，并有权于本合同约定的还款日从甲方在河北省农村信用社系统内开立的其他账户上转款用于还贷。乙方不划收的，该期全部借款本金及利息作逾期处理；乙方划收的，不足部分作逾期处理。合同履行期间甲方要求变更指定还款账户，须经乙方同意。</p>
+            <p>三，乙方有权将甲方的还款首先用于偿还本合同约定的应由甲方承担而由乙方垫付的各项费用以及乙方实现债权的费用。剩余款项乙方有权按照先还息后还本、利随本清的原则偿还，法律、法规另有规定的除外。</p>
+
+            <p><span class="bold">第九条</span>  提前还款</p>
+            <p>甲方提前还本时，须提前<span class="underline">1</span>个工作日向乙方提出申请，经乙方同意，可提前偿还部分或全部本金。甲方分次还款的，如提前归还部分借款本金，应按还款计划最早到期优先的顺序还款,利率仍执行本合同约定的贷款利率。提前还款后，尚未归还的借款仍按本合同约定的贷款利率执行。如提前归还了全部贷款可按以下第<span class="underline">壹</span>种方式计收利息：</p>
+            <p>（壹）按实际借款期限和本合同约定利率计收利息，并支付提前偿还本金<span class="underline">0</span>%的违约金。</p>
+            <p>（贰）按本合同约定借款期限和约定利率计收利息，并支付提前偿还本金<span class="underline">&nbsp;</span>%的违约金。</p>
+            <p>（叁）按实际借款期限和中国人民银行在本合同签订时公布的实际借款期限所对应的基准利率并按本合同利率条款的约定浮动后的利率计收利息，并支付提前偿还本金<span class="underline">&nbsp;</span>%的违约金。</p>
+            <p>提前还款，已计收的借款利息不作调整。</p>
+
+            <p><span class="bold">第十条</span>  甲方的权利和义务</p>
+            <p>一，甲方的权利</p>
+            <p>（一）有权按本合同约定向乙方提出支用借款的申请；</p>
+            <p>（二）有权按本合同约定使用借款；</p>
+            <p>（三）有权要求乙方对甲方提供的有关财务资料以及生产经营方面的商业秘密予以保密，但法律法规和规章另有规定、有权机关另有要求或双方另有约定的除外。</p>
+            <p>（四）有权拒绝乙方及其工作人员索取贿赂，有权对于上述行为或者乙方违反国家有关信贷利率、服务收费等法律法规的行为，向有关部门举报。</p>
+            <p>二，甲方的义务</p>
+            <p>（一）按照本合同的约定提款并足额清偿借款本息，承担本合同约定的各项费用；</p>
+            <p>（二）按照乙方的要求提供有关财务会计资料及生产经营状况资料，并且对所提供资料的真实性、完整性和有效性负责，不提供虚假材料或隐瞒重要经营财务事实；</p>
+            <p>（三）甲方发生住所、经营范围、联系方式等事项变更的，应当在变更后 15 个工作日内书面通知乙方，并附变更后的相关材料；</p>
+            <p>（四）甲方应按约定用途使用借款，不得挤占、挪用或用贷款从事非法、违规交易；应配合并接受乙方对其生产经营、财务活动及本合同项下借款使用情况的检查、监督；不得抽逃资金、转移资产或利用关联交易，以逃避对乙方的债务；不得利用与关联方之间的虚假合同，以无实际贸易背景的应收票据、应收账款等债权到银行贴现或质押，套取银行资金或授信；甲方应按约定的方式进行借款资金支付；</p>
+            <p>（五）甲方如利用本合同项下的借款进行符合合同约定用途的生产制造、工程建设，应当遵守国家有关环境保护的规定；</p>
+            <p>（六）在未还清乙方贷款本息之前，未征得乙方同意不得用本合同项下的贷款形成的资产向第三人提供担保；</p>
+            <p>（七）出现足以影响借款安全的重大不利情形时，立即书面通知乙方，并落实乙方认可的债权保全措施。</p>
+
+            <p><span class="bold">第十一条</span>  乙方的权利和义务</p>
+            <p>一，有权了解并检查甲方基本情况、贷款使用情况。</p>
+            <p>二，甲方出现足以影响贷款安全的重大不利情形，乙方可以停止发放贷款或提前收回贷款。</p>
+            <p>三，按照本合同约定收回或提前收回贷款本金、利息、罚息、复利、违约金、损害赔偿金、律师费以及其他实现债权的费用时，甲方同意乙方直接从甲方在河北省农村信用社系统中开立的任何帐户中划收。</p>
+            <p>四，甲方未履行还款义务或担保人未履行担保义务，乙方可以就甲方或担保人的违约行为对外进行公开披露。</p>
+            <p>五，依据本合同约定向甲方发放贷款。</p>
+
+            <p><span class="bold">第十二条</span>  借款担保</p>
+            <p>本合同项下借款的主担保方式为<span class="underline">信用</span>（信用／保证／抵押／质押）担保,具体条款由担保合同约定。主担保方式仅作为乙方核心系统中贷款科目划分依据之一，与担保的执行顺序及方式无关。</p>
+
+            <p><span class="bold">第十三条</span>  甲方承诺与保证：</p>
+            <p>一，甲方在签署和履行本合同过程中恪守诚实守信原则，向乙方提供的包括其自身、担保人的全部资料、文件、信息均是真实、有效、准确、完整而无任何隐瞒或遗漏。</p>
+            <p>二，甲方保证其信用状况良好，无重大不良记录。</p>
+            <p>三，甲方承诺贷款资金不用于国家禁止生产、经营的领域和用途；</p>
+            <p>四，甲方确认在未获得乙方书面同意之前，不采取对外投资、实质性增加债务融资等行为；</p>
+            <p>五，乙方有权对甲方采取现场或非现场尽职调查，对甲方的经营状况、财务状况、借款资金使用、还款情况等进行贷后检查，甲方有义务积极配合乙方进行支付管理、贷后管理及相关检查；</p>
+            <p>六，发生影响偿债能力的重大不利事项时及时通知乙方。</p>
+
+            <p><span class="bold">第十四条</span>  丙方承诺与保证</p>
+            <p>一，督促借款人按时偿还贷款本息； </p>
+            <p>二，及时向贷款人提供借款人的最新住址和联系方式；</p>
+            <p>三，如甲方未按期偿还贷款本息，丙方有义务按乙方要求如实提供有关甲方的资料，并配合乙方调查、审查和检查与借款有关的甲方经济收入、开支等情况；</p>
+            <p>四，丙方对甲方贷款及相关费用承担连带还款责任。本合同如涉及二人以上（含）共同借款，任一借款人均应履行本合同项下义务，对全部借款及相关费用承担连带清偿责任，乙方有权向任一借款人追索到期未偿还的贷款本息和应付未付的其他费用。</p>
+            
+            <p><span class="bold">第十五条</span>  违约责任</p>
+            <p>一，违约情形</p>
+            <p>（一）甲方的违约</p>
+            <p>1.未按乙方的要求提供真实、完整、有效的财务会计、生产经营状况及其他有关资料；</p>
+            <p>2.未按双方约定用途使用借款；</p>
+            <p>3.未按期归还债务本息；</p>
+            <p>4.拒绝或阻碍乙方对借款使用情况实施监督检查；</p>
+            <p>5.转移资产，抽逃资金，以逃避债务；</p>
+            <p>6.经营和财务状况恶化，无法清偿到期债务，卷入或即将卷入重大的诉讼或仲裁程序及其他法律纠纷，乙方认为可能或已经影响或损害乙方在本合同项下的权益；</p>
+            <p>7.所负的任何其他债务已影响或可能影响本合同项下对乙方义务的；</p>
+            <p>8.未履行对农村信用社的其他到期债务；</p>
+            <p>9.在合同有效期内，实施承包、租赁、合并、兼并、合资、分立、联营、股份制改造等改变经营方式或转换经营机制的行为，乙方认为可能或已经影响或损害乙方在本合同项下的权益；</p>
+            <p>10.乙方认为足以影响债权实现的其他情形；</p>
+            <p>11.违反本合同其他约定义务和承诺事项的。</p>
+            <p>（二）保证人出现以下情形，甲方未提供符合乙方要求的新的担保，视同甲方违约：</p>
+            <p>1.保证人发生承包、租赁、合并和兼并、合资、分立、联营、股份制改造、破产、撤销等情形，足以影响保证人承担连带保证责任的；</p>
+            <p>2.保证人向第三方提供超出其自身负担能力的担保的；</p>
+            <p>3.保证人丧失或可能丧失担保能力的；</p>
+            <p>4.保证合同约定的保证人其他违约情形。</p>
+            <p>（三）抵押人出现以下情形，甲方未提供符合乙方要求的新的担保，视为甲方违约：</p>
+            <p>1.抵押人未按乙方要求办理抵押物财产保险的，或发生保险事故后，未按抵押合同约定处理保险赔偿金的；</p>
+            <p>2.因第三人的行为导致抵押物毁损、灭失、价值减少，抵押人未按合同约定处理损害赔偿金的；</p>
+            <p>3.未经乙方书面同意，抵押人赠与、转让、出租、重复抵押、迁移或以其他方式处分抵押物的；</p>
+            <p>4.抵押人经乙方同意处分抵押物，但处分抵押物所得价款未按抵押合同约定进行处理的；</p>
+            <p>5.抵押物毁损、灭失、价值减少，足以影响本合同项下的债务的清偿，抵押人未及时恢复抵押物价值，或未提供乙方认可的其他担保的；</p>
+            <p>6.抵押合同约定的抵押人其他违约情形。</p>
+            <p>（四）出质人出现以下情形，甲方未提供符合乙方要求的新的担保，视为甲方违约：</p>
+            <p>1.出质人未按乙方要求办理质押财产保险的，或发生保险事故，未按质押合同约定处理保险赔偿金的；</p>
+            <p>2.因第三人的行为导致质押财产毁损、灭失、价值减少，出质人未按质押合同约定处理损害赔偿金的；</p>
+            <p>3.出质人经乙方同意处分质押财产，但处分质押财产所得价款未按质押合同约定进行处理的；</p>
+            <p>4.质物毁损、灭失、价值减少，足以影响债务本息清偿的，出质人未及时恢复质物价值，或未提供乙方认可的其他担保措施的；</p>
+            <p>5.质押合同约定的出质人其他违约情形。</p>
+            <p>（五）担保合同或其他担保方式未生效、无效、被撤销，或担保人出现部分或全部丧失担保能力的其他情形或者拒绝履行担保义务，甲方未按乙方要求落实新的担保的，视为甲方违约。</p>
+            <p>二，违约补救措施</p>
+            <p>出现上述第（一）至（五）项违约情形，乙方有权行使下述一项或几项权利：</p>
+            <p>（一）停止发放贷款，宣布贷款立即到期，要求甲方立即偿还本合同项下所有到期及未到期债务的本金、利息、费用；</p>
+            <p>（二）按贷款本金的<span class="underline">&nbsp;</span>％向甲方收取违约金；</p>
+            <p>（三）甲方未按本合同约定用途使用贷款的，对甲方挪用的部分，自未按合同约定用途使用贷款之日起至本息全部清偿之日止按罚息利率和本合同约定的结息方式计收利息和复利；</p>
+            <p>（四）借款到期前，对甲方未按时还清的利息按本合同第五条约定的贷款利率和结息方式计收复利；</p>
+            <p>（五）借款逾期后，对甲方未按时还清的借款本金和利息（包括被乙方宣布全部或部分提前到期的借款本金和利息），自逾期之日起至本息全部清偿之日止按罚息利率和本合同约定的结息方式计收利息和复利。借款逾期是指甲方未按期清偿或超过本合同约定的分次还款计划期限归还借款的行为；</p>
+            <p>（六）甲方同意乙方有权从甲方在河北省农村信用社系统开立的账户上划收款项；</p>
+            <p>（七）要求甲方对本合同项下所有债务提供符合乙方要求的新的担保；</p>
+            <p>（八）行使对担保的权利；</p>
+            <p>（九）如本合同乙方债权已被公证机构公证并赋予强制执行效力，甲方不履行还款义务时，乙方可直接向人民法院申请强制执行；</p>
+            <p>（十）解除本合同。</p>
+
+            <p><span class="bold">第十六条</span>  费用的承担。</p>
+            <p>乙方实现债权的费用（包括但不限于公证费、律师费、诉讼费、执行费、差旅费、财产保全费、资产评估费、鉴定费、拍卖费、办理产权变更过户的相关税、费等）均由甲方承担；因丙方违约致使乙方采取诉讼方式实现债权的，丙方应承担乙方为此支付的诉讼费及其他实现债权的费用。各方另有约定或法律、行政法规、部门规章另有规定的除外。</p>
+
+            <p><span class="bold">第十七条</span>  乙方有权将甲方、丙方的个人信用信息提供给中国人民银行个人信用信息基础数据库及信贷征信主管部门批准建立的个人信用数据库。并有权向上述个人信用数据库或有关单位、部门及个人查询甲方、丙方的信用状况，查询获得的信用报告仅限用于中国人民银行颁布的《个人信用信息基础数据库管理暂行办法》规定用途范围内。</p>
+
+            <p><span class="bold">第十八条</span>  公告催收及送达</p>
+            <p>一，公告催收</p>
+            <p>对甲方、丙方拖欠借款本息或发生其他违约情形时，乙方有权向有关部门或单位予以通报；对甲方、丙方违约且下落不明时，乙方有权通过国家级或甲方、丙方住所地省级以上（含省级）新闻媒体进行公告催收，甲方、丙方同意乙方的公告催收具有中断诉讼时效的效力。</p>
+            <p>二，送达</p>
+            <p>（一）本合同下的所有通知、请求、要求和其他信息传递均应以书面形式进行。</p>
+            <p>（二）本合同各方一致同意，任何书面材料由专人递送的，收件方签收视为送达（收件方拒收的，于拒收日视为送达）；采用邮寄或快递方式的，所邮寄的信函、法律文件、法律文书被退回之日即视为送达之日；采用传真方式的，收件方传真系统收到传真之日视为送达；如借款人下落不明或用上述方式无法送达，贷款人也可在公开媒体发布公告，自公告之日起经过六十日即视为送达。</p>
+            <p>（三）本合同已明确各方的联系地址、收件机构名称、收件人姓名、联系电话等事项，各方均以本合同中载明的上述地址为送达地址，送达地址的适用范围包括但不限于合同履行阶段和仲裁、诉讼阶段。任何一方如变更联系人、通信地址、联系电话等信息，均应在15日之内通知其他方，否则按原联系方式寄送的均视为送达。</p>
+            <p>（四）借款人（含共同借款人，下同）对预留的地址、联系方式和工作单位等个人信息的真实性负责，该等信息视为可以直接送达或通知至借款人本人。尽管有上述约定，借款人同意接受贷款人采取上门、函件、电话、短信等方式对借款人进行提醒或催收，所有提醒或催收的方式具有相同的法律效力。</p>
+
+            <p><span class="bold">第十九条</span>  乙方记录的证据效力</p>
+            <p>乙方有关本金、利息、费用和还款记录等内容的内部账务记载，乙方制作或保留的债务人办理提款、还款、付利息等业务过程中发生的单据、凭证及乙方催收贷款的记录、凭证，均构成有效证明主合同项下债权关系的确定证据。甲方不能仅因为上述记录、记载、单据、凭证由乙方单方制作或保留，而提出异议。</p>
+
+            <p><span class="bold">第二十条</span>  申请展期</p>
+            <p>甲方因特殊情况不能按期偿还贷款，应在贷款到期前<span class="underline">&nbsp;</span>个工作日内向乙方提出书面申请。经乙方和丙方同意，签订展期协议书后，方可延长还款期限，但贷款利率要按累计期限档次确定。</p>
+
+            <p><span class="bold">第二十一条</span>  争议的解决</p>
+            <p>本合同在履行过程中发生争议，可以通过协商解决，协商不成，按以下第<span class="underline">&nbsp;</span>种方式解决：</p>
+            <p>（壹）向<span class="underline">柏乡县人民法院</span>起诉。</p>
+            <p>（贰）提交<span class="underline">&nbsp;</span>仲裁委员会，按照申请仲裁时该会现行有效的仲裁规则进行仲裁。仲裁裁决是终局的，对双方均有约束力。</p>
+            <p>在诉讼或仲裁期间，本合同不涉及争议部分的条款仍须履行。</p>
+
+            <p><span class="bold">第二十二条</span>  其他事项：</p>
+            <p>一，本合同所称“期限届满”或“到期”包括乙方依照本合同的约定或国家法律、法规规定宣布本合同项下债务提前到期的情形。</p>
+            <p>二，本合同所称重大不利情形包括但不限于以下情形：甲方已全部或部分丧失还款能力；保证人财务状况恶化或因其他原因导致担保能力明显下降；抵质押物价值减少、毁损、灭失、被征用或出现权属争议足以影响乙方实担保物权。</p>
+
+            <p><span class="bold">第二十三条</span>  本合同经各方当事人（法定代表人/负责人/授权代理人）签字或加盖公章后，立即生效。</p>
+
+            <p><span class="bold">第二十四条</span>  本合同一式<span class="underline">叁</span>份，甲方<span class="underline">壹</span>份，乙方<span class="underline">壹</span>份，丙方<span class="underline">壹</span>份，效力相同。</p>
+
+            <p><span class="bold">第二十五条</span>  其他约定事项</p>
+            <p style="display: flex;">一，<span class="underline" style="flex: 1;">&nbsp;</span></p>
+            <p style="display: flex;">二，<span class="underline" style="flex: 1;">&nbsp;</span></p>
+
+            <p><span class="bold">第二十六条</span>  提示</p>
+            <p>乙方已提请甲方、丙方注意对本合同各条款作全面、准确的理解，并应甲方的要求作了相应的条款说明。签约双方对本合同的含义认识一致。</p>
+            <br />
+            <p>借款人(甲方)：<%-data.userName || '&nbsp;'%></p>
+            <p>贷款人(乙方)：河北柏乡农村商业银行股份有限公司</p>
+            <br />
+            <p>共同借款人(丙方)：&nbsp;&nbsp;</p>
+            <p>法定代表人（负责人）或授权代理人</p>
+            <br />
+            <p class="right">签约时间：&nbsp;&nbsp;年&nbsp;&nbsp;月&nbsp;&nbsp;日</p>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    "use strict";
+
+    var app = new Vue({
+        el: '#app',
+        data: function data() {
+            return {
+                title: '个人借款合同',
+                innerHeight: window.innerHeight,
+            };
+        },
+        created: function created() {
+            this.isIosOrAndroid();
+        },
+        methods: {
+            isIosOrAndroid: function isIosOrAndroid() {
+                var browser = {
+                    versions: function () {
+                        var u = navigator.userAgent,
+                            app = navigator.appVersion;
+                        return {
+                            //移动终端浏览器版本信息
+                            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+                            //ios终端
+                            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1 //android终端或uc浏览器
+
+                        };
+                    }(),
+                    language: (navigator.browserLanguage || navigator.language).toLowerCase()
+                };
+
+                if (browser.versions.android === true) {
+                    this.type = 'android';
+                    window.installment_installment.updateTitle(this.title);
+                } else {
+                    this.type = 'ios';
+                    window.webkit.messageHandlers.installment_installment.postMessage({
+                        type: 'title',
+                        title: this.title
+                    });
+                }
+            },
+            pushBack: function pushBack() {
+                if (this.type == 'ios') {
+                    window.webkit.messageHandlers.installment_installment.postMessage({
+                        type: 'pushback'
+                    }); // 返回首页
+                } else {
+                    window.installment_installment.finish();
+                }
+            }
+        }
+    });
+</script>
+</html>

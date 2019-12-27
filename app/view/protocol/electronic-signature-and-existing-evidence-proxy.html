@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/vant.css" rel="stylesheet" type="text/css"/>
+    <link href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/important.css" rel="stylesheet" type="text/css"/>
+    <link href="https://unpkg.com/animate.css@3.5.2/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="/public/css/common.css" rel="stylesheet" type="text/css"/>
+    <script src="https://asks.oss-cn-beijing.aliyuncs.com/static/js/jquery-2.1.3.min.js"></script>
+    <script src="https://asks.oss-cn-beijing.aliyuncs.com/static/js/vueJs2.5.16.js"></script>
+    <script src="https://asks.oss-cn-beijing.aliyuncs.com/static/js/vant.js"></script>
+    <title>电子签章及存证授权委托书</title>
+    <style>
+        .reg-agreement {
+            background: #fff;
+            /* color:#677887; */
+            color: #000;
+            line-height: 24px;;
+        }
+        .reg-agreement .reg-wrap {
+            padding: 30px 15px;
+            margin-bottom: 48.75px;
+        }
+        .reg-agreement h1 {
+            margin: 0;
+            font-size: 2.2em;
+            text-align: center;
+            font-weight: bold;
+            padding-bottom: 28px;
+        }
+        .reg-agreement h2 {
+            margin: 0;
+            font-weight: bold;
+            font-size: 1.9em;
+            padding: 12px 0;
+            text-align: center;
+        }
+        .reg-agreement h3 {
+            font-weight: bold;
+            font-size: 1.6em;
+            margin-bottom: 6px;
+        }
+        .reg-agreement h3.top {
+            margin-top:14px;
+        }
+        .reg-agreement p.normal {
+            text-indent: 0em;
+            margin-bottom: 14px;
+        }
+        .reg-agreement p {
+            text-indent: 2em;
+            font-size:1.2em ;
+            line-height: 26px;
+            margin:0;
+        }
+        .reg-agreement p.common {
+            text-indent: 0em;
+        }
+    </style>
+</head>
+<body>
+<div id="app" style="height:100%">
+    <div class="reg-agreement" style="height: 100%">
+        <div class="reg-wrap">
+            <h1>电子签章及存证授权委托书</h1>
+            <p>根据《中华人民共和国电子签名法》的规定，为了更安全、有效、便利的签署<%-data.appName%>平台上的电子协议及文件并对其进行合法存储，本人特做出以下授权和承诺：</p>
+            <p>1.	本人了解并同意以电子签名的方式签订<%-data.appName%>平台上的所有电子文件。并授权与<%-data.appName%>平台合作的电子签名技术服务提供商（以下简称“合作商”）提供相应电子签名服务，并授权合作商对已签署文件进行电子存证事宜，并认可相关有效电子文件对本人发生法律效力。</p>
+            <p>2.	本人了解并同意<%-data.appName%>平台向合作商提供本人相关信息（包括但不限于姓名、身份证信息、手机号码、电子邮箱等）用以申请数字证书。</p>
+            <p>3.	本人了解并同意，合作商对存储在其存证系统的电子数据具有保密义务，但如果该电子数据根据适用法律程序或行政强制性要求必须提供的，则合作商有权向司法机构或行政机构等提供授权人存储在合作商存证系统的电子数据。</p>
+            <p>4.	本人了解并同意因授权人系统不稳定等原因导致的签章失败，<%-data.appName%>平台及合作商不承担责任。</p>
+            <p>5.	本人保证本授权委托书的真实性、合法性、有效性，被授权人因依据本授权委托书进行的相关操作而引起的一切风险或纠纷，由授权人独立承担。</p>
+            <p>6.	本授权委托书不可撤销，自授权人确认同意之日起生效，至授权人通过<%-data.appName%>平台签订的全部电子文件履行完毕、并支付、偿还完毕相关协议项下的全部费用之日终止。</p>
+            <br>
+            <h3>授权人：<%-data.userName%></h3>
+            <h3>签署日期：<%-data.date%></h3>
+        </div>
+    </div>
+
+</div>
+
+</body>
+<script>
+  "use strict";
+
+  var app = new Vue({
+    el: '#app',
+    data: function data() {
+      return {
+        title: '电子签章及存证授权委托书'
+      };
+    },
+    created: function created() {
+      this.isIosOrAndroid();
+    },
+    methods: {
+      isIosOrAndroid: function isIosOrAndroid() {
+        var browser = {
+          versions: function () {
+            var u = navigator.userAgent,
+              app = navigator.appVersion;
+            return {
+              //移动终端浏览器版本信息
+              ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+              //ios终端
+              android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1 //android终端或uc浏览器
+
+            };
+          }(),
+          language: (navigator.browserLanguage || navigator.language).toLowerCase()
+        };
+
+        if (browser.versions.android === true) {
+          this.type = 'android';
+          window.installment_installment.updateTitle(this.title);
+        } else {
+          this.type = 'ios';
+          window.webkit.messageHandlers.installment_installment.postMessage({
+            type: 'title',
+            title: this.title
+          });
+        }
+      },
+      pushBack: function pushBack() {
+        if (this.type == 'ios') {
+          window.webkit.messageHandlers.installment_installment.postMessage({
+            type: 'pushback'
+          }); // 返回首页
+        } else {
+          window.installment_installment.finish();
+        }
+      }
+    }
+  });
+
+</script>
+</html>

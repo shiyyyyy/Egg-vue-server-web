@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1, maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/important.css" rel="stylesheet" type="text/css" />
+    <link href="/public/css/common.css" rel="stylesheet" type="text/css" />
+    <script src="https://asks.oss-cn-beijing.aliyuncs.com/static/js/jquery-2.1.3.min.js"></script>
+    <title><%-data.appName%></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        #downloadWrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .top {
+            position: relative;
+            width: 100%;
+            margin-bottom: 46px;
+        }
+
+        .logoBg {
+            width: 121px;
+            height: 121px;
+            position: absolute;
+            bottom:-48px;
+            left: 50%;
+            margin-left: -60.5px;
+            background: url(/public/images/bg_logo.png) center no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .textTitle {
+            height: 28px;
+            text-align: center;
+            font-weight: bold;
+            color: rgba(51, 51, 51, 1);
+            line-height: 28px;
+            margin-bottom: 22px;
+        }
+
+        .middle {
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            margin-bottom: 47px;
+        }
+
+        .middle img {
+            width: 70px;
+            display: block;
+            margin: 0 auto 2px;
+        }
+
+        .middle span {
+            font-weight: 400;
+            color: rgba(51, 51, 51, 1);
+        }
+
+        .bottom {
+            text-align: center;
+            padding: 0 53px;
+            margin-bottom: 37px;
+        }
+
+        .bottom .button {
+            font-weight: 500;
+            color: rgba(255, 255, 255, 1);
+            height: 45px;
+            background: rgba(54, 90, 247, 1);
+            box-shadow: 0px 5px 15px 0px rgba(54, 90, 247, 0.3);
+            border-radius: 23px;
+            line-height: 45px;
+            margin: 0 auto;
+        }
+        .downBg{
+            background:rgba(0,0,0,0.5);
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 999999;
+            display: none;
+        }
+        .arrow{
+            position: fixed;
+            width: 178px;
+            height: 145px;
+            top: 52px;
+            right: 19px;
+        }
+        .know{
+            position: fixed;
+            width: 135px;
+            height: 50px;
+            top: 316px;
+            left: 50%;
+            margin-left: -67.5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="downloadWrap">
+        <div class="downBg">
+            <img class="arrow" src="/public/images/tx_download.png" alt="">
+            <img class="know" src="/public/images/btn_know.png" alt="">
+        </div>
+        <div class="top">
+            <img src="/public/images/bg_download.png" alt="">
+            <div class="logoBg"></div>
+        </div>
+        <p class="textTitle f-40"><%-data.appName%></p>
+        <div class="middle">
+            <div>
+                <img src="/public/images/ico_download1.png" alt="">
+                <span class="f-28">信用额度<br>轻松获取</span>
+            </div>
+            <div>
+                <img src="/public/images/ico_download2.png" alt="">
+                <span class="f-28">优质商品<br>任您挑选</span>
+            </div>
+            <div>
+                <img src="/public/images/ico_download3.png" alt="">
+                <span class="f-28">极速审批<br>借款无忧</span>
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="button f-34">下载APP</div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+                var browser = {
+                    versions: function () {
+                    var u = navigator.userAgent,
+                        app = navigator.appVersion;
+                    return {
+                        //移动终端浏览器版本信息
+                        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+                        //ios终端
+                        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1 //android终端或uc浏览器
+
+                    };
+                    }(),
+                    language: (navigator.browserLanguage || navigator.language).toLowerCase()
+                };
+                if (browser.versions.android === true) {
+                    //安卓
+                   type = "<%-data.android%>";
+                   var ua = navigator.userAgent.toLowerCase();
+                    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+                        $(".button").off("click").click(function(){
+                            $(".downBg").show();
+                        });
+                    } else {
+                        $(".button").off("click").click(function(){
+                            window.location.href =type;
+                        });
+                    }
+                } else {
+                    //ios
+                    type = "<%-data.ios%>";
+                    $(".button").off("click").click(function(){
+                        // window.location.href = type;
+                        window.location.href = "/download/about";
+                    });
+                }
+            $(".know").off("click").click(function(){
+                $(".downBg").hide();
+            });
+        });
+        window.onload = function() {
+            // 阻止双击放大
+            var lastTouchEnd = 0;
+            document.addEventListener('touchstart', function(event) {
+                if (event.touches.length > 1) {
+                    event.preventDefault();
+                }
+            });
+            document.addEventListener('touchend', function(event) {
+                var now = (new Date()).getTime();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+
+            // 阻止双指放大
+            document.addEventListener('gesturestart', function(event) {
+                event.preventDefault();
+            });
+        }
+    </script>
+</body>
+
+</html>

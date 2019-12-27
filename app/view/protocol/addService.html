@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/vant.css" rel="stylesheet" type="text/css"/>
+    <link href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/important.css" rel="stylesheet" type="text/css"/>
+    <link href="https://unpkg.com/animate.css@3.5.2/animate.min.css" rel="stylesheet" type="text/css">
+    <link href="/public/css/common.css" rel="stylesheet" type="text/css"/>
+    <script src="https://asks.oss-cn-beijing.aliyuncs.com/static/js/jquery-2.1.3.min.js"></script>
+    <script src="https://asks.oss-cn-beijing.aliyuncs.com/static/js/vueJs2.5.16.js"></script>
+    <script src="https://asks.oss-cn-beijing.aliyuncs.com/static/js/vant.js"></script>
+    <title>VIP会员增值服务协议</title>
+    <style>
+        .reg-agreement {
+            background: #fff;
+            /* color:#677887; */
+            color: #000;
+            line-height: 24px;;
+        }
+        .reg-agreement .reg-wrap {
+            padding: 30px 15px;
+            margin-bottom: 48.75px;
+        }
+        .reg-agreement h1 {
+            margin: 0;
+            font-size: 2.2em;
+            text-align: center;
+            font-weight: bold;
+            padding-bottom: 28px;
+        }
+        .reg-agreement h2 {
+            margin: 0;
+            font-weight: bold;
+            font-size: 1.9em;
+            padding: 12px 0;
+            text-align: center;
+        }
+        .reg-agreement h3 {
+            font-weight: bold;
+            font-size: 1.6em;
+            margin-bottom: 6px;
+        }
+        .reg-agreement h3.top {
+            margin-top:14px;
+        }
+        .reg-agreement p.normal {
+            text-indent: 0em;
+            margin-bottom: 14px;
+        }
+        .reg-agreement p {
+            text-indent: 2em;
+            font-size:1.2em ;
+            line-height: 26px;
+            margin:0;
+        }
+        .reg-agreement p.common {
+            text-indent: 0em;
+        }
+        .reg-agreement .fw-700{
+          font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+<div id="app" style="height:100%">
+    <div class="reg-agreement" style="height: 100%">
+        <div class="reg-wrap">
+            <h1>VIP会员增值服务协议</h1>
+            <p>本协议是<%-data.appName%>手机APP应用（以下简称“<%-data.appName%>”）上符合条件并可以使用信用付款服务的注册用户（以下简称“用户”或“您”）与<%-data.appName%>运营主体<%- importantInfo.version == 0?importantInfo.importantCompanyName:data.companyName%>（以下简称为 “<%- importantInfo.version == 0?importantInfo.importantCompanyShortName:data.companyShortName%>”或“<%-data.appName%>”）之间就用户购买<%-data.appName%>平台上所销售的商品或使用所提供的借款服务进行分期付款相关事宜所订立的契约。</p>
+            <p class="fw-700">请您务必审慎阅读并充分理解各条款的内容，特别是加黑加粗、免除或者限制责任的条款以及开通或使用某项服务的条款或单独协议，点击“同意并继续”按钮后，本协议即构成对双方有约束力的法律文件。如发生法律纠纷，您不得以未仔细阅读或理解本协议为由进行抗辩。</p>
+            <p><span class="fw-700">当您按照<%-data.appName%>VIP会员开通页面提示阅读并同意本协议且完成全部开通程序后，即表示您已充分阅读、理解并接受本协议的全部内容，并与<%-data.appName%>达成一致，成为<%-data.appName%>VIP会员。</span>阅读本协议的过程中，如果您不同意本协议或其中任何条款约定，您应立即停止开通程序。</p>
+            <p>本协议由您与<%-data.appName%>共同签署，与《用户注册协议》以及《信用服务协议》或《借款服务协议》构成统一整体。本协议内容包括协议正文及所有<%-data.appName%>已经公布的适用于所有会员用户的各类服务条款及规则；未来<%-data.appName%>会以本协议为基础，继续丰富相关的服务条款与规则，并依约定程序公布生效。所有条款与规则为协议不可分割的组成部分，与协议具有同等法律效力。</p>
+            <h2>1.定义</h2>
+            <p>1.1 <%-data.appName%>会员</p>
+            <p>指已签署并遵守<%-data.appName%>《用户注册协议》《隐私权政策》、遵守<%-data.appName%>平台规则等协议及规则、具备完全民事行为能力的用户，分为<%-data.appName%>普通会员、<%-data.appName%>VIP会员。<%-data.appName%>会员服务由<%-data.appName%>的网络及软件技术服务提供者<%- importantInfo.version == 0?importantInfo.importantCompanyName:data.companyName%>向用户提供。</p>
+            <p>1.2 <%-data.appName%>VIP会员</p>
+            <p>指在用户根据1.1中的描述成为<%-data.appName%>会员后，在签署本协议并根据<%-data.appName%> VIP会员开通流程所展示的收费标准支付相应费用后获取的特殊资格（实际名称以开通流程及前台页面展示为准）。</p>
+            <p>1.3 <%-data.appName%>VIP会员权益</p>
+            <p>指用户基于其<%-data.appName%>VIP会员资格所享有的特殊权益，具体权益内容将通过<%-data.appName%>平台进行不定期更新，以平台最新信息为准，请予以关注。</p>
+            <p>1.4 <%-data.appName%>VIP会员增值服务</p>
+            <p>指用户基于其<%-data.appName%>VIP会员资格所享有特殊权益中的一种，当VIP会员选择增值服务后，将享受到提前还款手续费的优惠，即当用户提前清偿其尚未到期的赊销款或借款时，<%-data.appName%>不收取任何与提前还款相关的手续费。</p>
+            <h2>2.VIP会员服务使用</h2>
+            <p><%-data.appName%>通过会员制的消费服务模式，通过<%-data.appName%>APP平台为会员提供全方位的专享优质服务与权益。<%-data.appName%>有权收取一定的会员服务费用，收取标准以<%-data.appName%>平台上页面展示的会员服务价格为准。</p>
+            <p>2.1 <%-data.appName%>VIP会员服务有效期为自服务开通之日起计算，会员期限以平台活动页面所示期限为准。若您在有效期届满后希望继续享受<%-data.appName%>VIP会员服务的，则需续费或重新申请。</p>
+            <p>2.2 <%-data.appName%>VIP会员权益可能包括以下部分或全部类型（实际权益类型可能出现新增或减少）：</p>
+            <p>2.2.1特定商品的优惠，即在购买特定商品过程中，通过享受优惠价格、获得折扣让利、使用品类券等方式获取的特殊权益；</p>
+            <p>2.2.2特定平台的会员资格，即可直接激活或获取特定平台会员资格并享受该特定平台会员资格对应会员权益的特殊权益；</p>
+            <p>2.2.3特定服务，即可直接享受特别服务的特殊权益；</p>
+            <p>2.2.4其他权益。</p>
+            <p>2.3 第三方服务或内容</p>
+            <p><%-data.appName%>VIP会员权益可能包含或涉及由第三方实际提供的商品、功能或服务（以下简称“第三方内容”），第三方内容是为了向您提供更为完整、丰富的会员权益而设置，且取得该第三方的合法授权的服务和内容。</p>
+            <p>2.3.1<%-data.appName%>VIP会员仅为您提供第三方内容获取资格，第三方作为内容的实际提供者，请您理解该内容相关协议约定或规则（如商品交易订单等）系由您与第三方达成，<%-data.appName%>无权在本协议中就第三方内容提供使用授权、服务保证及客户支持。基于<%-data.appName%>与第三方就各自所提供服务或内容的专业性和独立性，如果您使用第三方内容过程中出现任何疑问或需求，您可直接与第三方联系沟通。因您使用第三方内容产生的争议，您可直接与第三方协商解决。</p>
+            <p>2.3.2为持续改善您的<%-data.appName%>VIP会员体验，您理解<%-data.appName%>VIP会员权益所包含的第三方内容可能出现新增或减少，新增的第三方内容同样适合本条约定。</p>
+            <p>2.3.3为更好地为您提供服务，<%-data.appName%>将基于您与第三方达成协议中您向第三方提供的具体授权以及《法律声明及隐私权政策》，并按照第三方为您提供内容所必需和最小限度的原则，向第三方提供您的有限相关信息。如果您不希望第三方获取您的信息，您可停止使用第三方服务，<%-data.appName%>将停止向第三方传递您的信息。</p>
+            <p>2.4服务、权益的更新与生效</p>
+            <p>为了改善用户体验、完善服务内容、保证<%-data.appName%>VIP会员与<%-data.appName%>提供服务的商业诉求一致，<%-data.appName%>会对<%-data.appName%>VIP会员或其相关服务、权益、功能、界面等进行更新、修改，包括开发新功能或权益、删除旧功能或权益等。您可按照变更后<%-data.appName%>VIP会员的实际情况继续使用相应权益、功能或服务并适用本协议的相关约定。</p>
+            <p>2.5 会员服务专属限制</p>
+            <p><%-data.appName%>VIP会员服务及会员权益仅限您本人使用，开通<%-data.appName%>VIP会员服务或获取<%-data.appName%>VIP会员权益的账户（包括<%-data.appName%>会员账户、第三方账户）作为您享受相应服务及权益的重要身份标识，用户名、密码和生物特征（如有）均由您自行设置并保管。</p>
+            <p>2.6账户、密码的使用与责任自负原则</p>
+            <p><%-data.appName%>会员账户或第三方账户与您的会员权益及资格密切挂钩，交由他人使用可能会造成您本人在权益使用上产生不良影响，因此<%-data.appName%>请您不要将自己的账户给予他人使用；从公平合理的角度，您应知晓所有通过该账户实现的操作<%-data.appName%>只能默认视为您本人的行为，由此产生的后果由您自行承担。</p>
+            <p>2.7 不当使用会员服务</p>
+            <p>您确保您将合理使用<%-data.appName%>VIP会员服务，不利用<%-data.appName%>VIP会员服务进行盈利或非法获利，不以任何形式转让或转移您所享有的<%-data.appName%>VIP会员服务或<%-data.appName%>VIP会员权益，不以任何方式将<%-data.appName%>VIP会员服务或<%-data.appName%>VIP会员权益借给他人使用。若<%-data.appName%>有合理理由怀疑您存在任何不当使用会员服务行为的，<%-data.appName%>将取消您的<%-data.appName%>VIP会员资格、作废<%-data.appName%>VIP会员权益且您无权要求<%-data.appName%>退还您所支付的会员服务费用。您应对您不当使用会员服务的行为及后果（包括损失）负责，您若给<%-data.appName%>造成损失的，<%-data.appName%>有权向您追偿。</p>
+            <p>2.8 违背诚实信用</p>
+            <p>您保证您在获取和使用<%-data.appName%>VIP会员服务过程中应遵守诚实信用原则，若<%-data.appName%>合理怀疑您存在以下任一情形的，您将可能面临<%-data.appName%>VIP会员服务开通申请被拒绝、已开通的<%-data.appName%>VIP会员服务被终止或中止、已绑定或获取的<%-data.appName%>VIP会员权益被全部或部分取消或暂停使用，且您无权要求退换已支付的会员服务费用：</p>
+            <p>2.8.1通过任何不正当手段或以违反诚实信用原则的方式开通<%-data.appName%>VIP会员服务的，如恶意绕过正常开通流程；</p>
+            <p>2.8.2使用<%-data.appName%>VIP会员权益获取的商品或服务并非用于个人消费或使用的；</p>
+            <p>2.8.3其他违反诚实信用原则的行为。</p>
+            <p>2.9 您知悉并同意，为保证您充分享受<%-data.appName%>VIP会员服务、避免您错过优质会员权益，<%-data.appName%>可能通过消息、通知、短信等形式，向您提供会员权益相关信息。</p>
+            <h2>3. VIP会员权益内容</h2>
+            <p>3.1 权益内容</p>
+            <p>成为<%-data.appName%>VIP会员后，您所专享的具体特殊权益内容将通过<%-data.appName%>平台发布并进行不定期更新，且以平台最新信息为准，请予以关注。</p>
+            <p>3.2 VIP会员增值服务</p>
+            <p class="fw-700">当VIP会员选择增值服务后，将享受到提前还款手续费的优惠，即当用户提前清偿其尚未到期的赊销款或借款时，<%-data.appName%>不收取任何与提前还款相关的手续费。本协议下，会员选择增值服务的，按照赊销或借款发生时每笔<%-oldData.valuesAddedServiceCharge%>元的标准收取，收取的费用概不退还。<%-data.appName%>有权在本协议签订后根据运营情况和平台政策对费用金额随时做出调整，<%-data.appName%>将通过本协议或《用户注册协议》约定的多种通知途径通知到您，费用调整一经通知立即生效。</p>
+            <p>3.3 权益性质</p>
+            <p><%-data.appName%>会员权益是一项个人的、非独家的、不可转让的、有服务期限的权利。成为<%-data.appName%>会员后，可享受的会员权益以<%-data.appName%>平台上会员权益频道公示的信息为准。</p>
+            <p>3.4 权益调整及生效</p>
+            <p>随着服务类型的广泛化在平衡会员总体权益不变的情况下，<%-data.appName%>有权根据市场情况对会员权益进行部分调整。<%-data.appName%>就前述权益调整时须提前在<%-data.appName%>APP首页或会员网站特权中心以公告的形式予以发布。公告自发布之时开始生效。</p>
+            <p>3.5 拒绝权益调整的处理规则</p>
+            <p>会员权益调整后，如果继续使用<%-data.appName%>平台服务的，即视为接受会员权益调整。同意<%-data.appName%>对本协议相关条款所作的修改。如不接受会员权益调整。双方协商确定解决方案。双方协商终止协议的，对已交纳的会员费用，在扣除已经使用的会员权益(含赠送的权益)所节省的费用后，按照会员权益服务期间进行平摊。如有剩余。退回剩余部分的会员费用。</p>
+            <h2>4. <%-data.appName%>VIP会员服务终止</h2>
+            <p>4.1 您应理解<%-data.appName%>VIP会员服务具备一定有效期，有效期届满后您未续费或重新开通的，<%-data.appName%>VIP会员服务终止，对应的<%-data.appName%>VIP会员权益失效。</p>
+            <p>4.2 您应理解按本协议及相关规则使用<%-data.appName%>VIP会员服务、尊重<%-data.appName%>VIP会员服务使用限制及按本协议约定履行义务是您使用<%-data.appName%>VIP会员服务的前提，如您违反本协议的相关约定，<%-data.appName%>会视您的实际违约情况选择中止、终止或解除本协议。</p>
+            <p>4.3 您知悉并确认，您所支付的会员服务费用（如有）代表您开通、使用<%-data.appName%>VIP会员服务属<%-data.appName%>所付出的整体成本和努力，无法按照<%-data.appName%>VIP会员权益或有效期进行拆分。您开通<%-data.appName%>VIP会员服务后，若出现以下情形造成<%-data.appName%>VIP会员服务终止或中止的，您不应要求退还部分或全部会员服务费用：</p>
+            <p>4.3.1您中途主动取消<%-data.appName%>VIP会员服务、放弃会员权益或终止资格的；</p>
+            <p>4.3.2<%-data.appName%>根据《<%-data.appName%>平台服务协议》、<%-data.appName%>规则、本协议、会员权益规则等协议及规则注销您的帐号、终止您的<%-data.appName%>会员资格的；</p>
+            <p>4.4 若<%-data.appName%>无合理理由即自行决定终止向您提供<%-data.appName%>VIP会员服务，<%-data.appName%>将根据平台所定计算方法向您退款。然而，因<%-data.appName%>认定您为违反本协议或任何相关法律的行为、欺诈或滥用<%-data.appName%>VIP会员的行为、或损害<%-data.appName%>利益或伤害其他用户的行为而导致的终止，<%-data.appName%>不予退款。</p>
+            <p>4.5 本协议的终止并不影响终止前您与<%-data.appName%>基于本协议产生的权利义务。因您的原因导致<%-data.appName%>遭受第三方索赔、行政部门处罚等，您应当赔偿<%-data.appName%>因此产生的损失及（或）发生的费用，包括合理的律师费用、调查取证费用等。如因您的个人行为造成<%-data.appName%>商誉损害的，<%-data.appName%>有权要求您在公开媒体上发表声明以消除影响。</p>
+            <h2>5. 协议的变更、终止与违约责任</h2>
+            <p>5.1<%-data.appName%>保留在中华人民共和国法律法规允许的范理内独自决定拒绝服务、关闭用户账户、清除或编辑内容等相关权利。</p>
+            <p>5.2开通会员服务后，会员在服务期内主动取消会员服务的，<%-data.appName%>不退还会员服务费用。</p>
+            <p>5.3根据国家法律法规变化及平台运营需要。<%-data.appName%>会不定期对相关服务规则进行修改。建议会员在使用<%-data.appName%>平台服务前仔细阅读平台页面上的公告或通知。</p>
+            <p>5.4 如会员发生下列任何一种行为，构成严重违约的,<%-data.appName%>有权随时终止向该会员提供本协议项下的会员服务，且无需退还会员服务费用。</p>
+            <p>5.4.1提供虚假的个人资料,后果严重的；</p>
+            <p>5.4.2以营利、经营等非个人使用的目的为自己或他人申请开通<%-data.appName%>会员服务的；</p>
+            <p>5.4.3恶意操作、诋毁、损害<%-data.appName%>的声誉；</p>
+            <p>5.4.4严重违反本协议中约定的服务使用规则及不时更新发布的新的相关操作规则；</p>
+            <p>5.4.5利用会员服务从事违反国家法律法规的行为。</p>
+            <p>5.5除本协议另有约定外，如一方违反有关法律、法规或本协议项下任何条款而给对方造成损失的，违约一方须向对方承担由此造成的损害赔偿责任。</p>
+            <h2>6. 退款规则</h2>
+            <p>6.1 VIP会员资格可通过平台赠送、参加活动赢取、现金购买等方式获得，但不论上述任何形式，已经获得，会员均无权以任何理由要求平台退款。VIP会员申请增值服务并已缴纳增值服务费的，亦无权以任何理由要求平台退款。</p>
+            <h2>7. 会员个人信息保护</h2>
+            <p>7.1保护会员个人信息安全是<%-data.appName%>一贯坚守的基本原则，<%-data.appName%>保证不对外公开提供单个会员的信息资料以及会员在使用网络服务时存储在<%-data.appName%>的非公开内容，但下列情况除外：</p>
+            <p>7.1.1已获得会员授权的；</p>
+            <p>7.1.2根据有关法律法规的要求，按照相关政府主管部门、司法机关的要求需要提供的；</p>
+            <p>7.1.3 维护<%-data.appName%>的合法权益。</p>
+            <p>7.2 <%-data.appName%>会与第三方合作向会员提供相关的会员权益服务。在事先取得会员的授权后，<%-data.appName%>有权将会员的个人信息资料提供给合作第三方，合作第三方对会员个人信息同样负有保密义务。</p>
+            <p>7.3 在不透露单个会员个人信息资料的前提下，<%-data.appName%>有权对整个用户数据库进行分析或调查研究,并对用户数据库进行商业上的利用。</p>
+            <h2>8. 免责声明</h2>
+            <p>8.1如因不可抗力或其他<%-data.appName%>无法控制的原因。导致<%-data.appName%>无法及时提供服务或无法按本协议履行的，<%-data.appName%>会合理地尽力协助处理后续事宜，但不承担赔偿责任。</p>
+            <p>8.2<%-data.appName%>不对会员因第三方的行为或不作为造成的损失承担赔偿责任。包括但不限于支付服务、网络接入服务、侵权行为或其他违法违规行为。</p>
+            <p>8.3对于会员自<%-data.appName%>平台获得的非<%-data.appName%>自身的信息、内容或广告宣传等资讯，<%-data.appName%>不承担保证其真实准确和完整的责任。会员应自行甄别真伪，谨慎防范风险。无论出于何种原因，<%-data.appName%>无需对会员或任何第三方承担赔偿责任。</p>
+            <h2>9. 法律适用和管辖</h2>
+            <p>9.1 本协议条款的订立、生效、履行、解释及争议的解决均适用中华人民共和国法律法规。</p>
+            <p>9.2 如发生本协议某些条款与现行法律法规相抵触时，则这些条款将完全按法律规定重新加以解释，其余条款继续有效。</p>
+            <p>9.3 因本协议引起的或与本协议有关的争议，<%-data.appName%>可与用户协商解决。协商不成的，任何一方均有权提起诉讼，并以原告所在辖区的人民法院为第一审管辖法院。</p>
+            <h2>10. 其他</h2>
+            <p>10.1 会员同意，<%-data.appName%>可以通过网页公告，页面提示、弹窗、会员预留联系方式(电子邮件、手机短信)、电话等通知方式，向其发送相关活动的必要信息。</p>
+            <p>10.2 如对本协议内容或使用<%-data.appName%>会员权益服务有任何咨询或建议，可以通过<%-data.appName%>APP在线客服或拨打<%-data.appName%>官方客服电话与<%-data.appName%>取得联系，<%-data.appName%>会尽快安排并予以回复。</p>
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+  "use strict";
+
+  var app = new Vue({
+    el: '#app',
+    data: function data() {
+      return {
+        title: 'VIP会员增值服务协议'
+      };
+    },
+    created: function created() {
+      this.isIosOrAndroid();
+    },
+    methods: {
+      isIosOrAndroid: function isIosOrAndroid() {
+        var browser = {
+          versions: function () {
+            var u = navigator.userAgent,
+              app = navigator.appVersion;
+            return {
+              //移动终端浏览器版本信息
+              ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+              //ios终端
+              android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1 //android终端或uc浏览器
+
+            };
+          }(),
+          language: (navigator.browserLanguage || navigator.language).toLowerCase()
+        };
+
+        if (browser.versions.android === true) {
+          this.type = 'android';
+          window.installment_installment.updateTitle(this.title);
+        } else {
+          this.type = 'ios';
+          window.webkit.messageHandlers.installment_installment.postMessage({
+            type: 'title',
+            title: this.title
+          });
+        }
+      },
+      pushBack: function pushBack() {
+        if (this.type == 'ios') {
+          window.webkit.messageHandlers.installment_installment.postMessage({
+            type: 'pushback'
+          }); // 返回首页
+        } else {
+          window.installment_installment.finish();
+        }
+      }
+    }
+  });
+</script>
+</html>

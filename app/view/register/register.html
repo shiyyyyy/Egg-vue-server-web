@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1, maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/important.css" rel="stylesheet" type="text/css" />
+    <link href="/public/css/common.css" rel="stylesheet" type="text/css" />
+    <script src="https://asks.oss-cn-beijing.aliyuncs.com/static/js/jquery-2.1.3.min.js"></script>
+    <script src="https://asks.oss-cn-beijing.aliyuncs.com/static/js/vueJs2.5.16.js"></script>
+    <link href="https://asks.oss-cn-beijing.aliyuncs.com/static/css/mintUi2.2.13.css" rel="stylesheet">
+    <script src="https://asks.oss-cn-beijing.aliyuncs.com/static/js/mintUi2.2.13.js"></script>
+    <title>小银号</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        #app {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .top {
+            position: relative;
+            width: 100%;
+            margin-bottom: 260px;
+        }
+
+        .modalBox {
+            padding: 0 15px;
+            position: absolute;
+            bottom: -205px;
+            left: 0;
+            width: 100%;
+            height: 258px;
+        }
+
+        .modalBox>div {
+            background: #ffffff;
+            height: 100%;
+            box-shadow: 0px 1px 10px 4px rgba(54, 90, 247, 0.05);
+            border-radius: 9px;
+            padding: 30px 29px 0;
+        }
+
+        .modalBox>div>div {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .registerBox{
+            position: absolute;
+            left: 0;
+            bottom: -23px;
+            padding: 0 61px;
+            height: 46px;
+            width: 100%;
+        }
+        .register {
+            /* width: 165px; */
+            height: 46px;
+            background: rgba(54, 90, 247, 1);
+            box-shadow: 0px 5px 15px 0px rgba(54, 90, 247, 0.3);
+            border-radius: 23px;
+            font-weight: bold;
+            color: rgba(255, 255, 255, 1);
+            line-height: 46px;
+            text-align: center;
+        }
+
+        .title {
+            height: 20px;
+            font-weight: bold;
+            color: rgba(51, 51, 51, 1);
+            line-height: 20px;
+            margin-bottom: 14px;
+        }
+
+        input {
+            border: none;
+            outline: none;
+            height: 24px;
+            font-weight: 500;
+            color: rgba(51, 51, 51, 1);
+            line-height: 24px;
+        }
+
+        .tel {
+            width: 100%;
+        }
+
+        input::placeholder {
+            font-size: 14px;
+        }
+
+        .caret-color {
+            color: rgba(51, 51, 51, 1);
+            caret-color: #466EF3;
+        }
+        @supports (-webkit-mask: none) and (not (cater-color: #466EF3)) {
+            .caret-color { color: #466EF3; }
+            .caret-color::first-line { color: rgba(51, 51, 51, 1); }
+        }
+
+        .yzm {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .number {
+            width: 84px;
+        }
+
+        .yzm>div {
+            height: 24px;
+        }
+
+        .yzm>div span {
+            float: right;
+            height: 24px;
+            line-height: 24px;
+        }
+
+        .getYzm {
+            color: #4F69FC;
+            font-weight: 400;
+        }
+
+        .line {
+            height: 1px;
+            width: 100%;
+            background: rgba(234, 234, 234, 1);
+            margin: 12px auto 30px;
+        }
+
+        .bottom {
+            text-align: center;
+        }
+
+        .bottom>span:nth-of-type(1) {
+            color: #9A9A9A;
+        }
+
+        .bottom>span:nth-of-type(2) {
+            color: #4F69FC;
+        }
+
+        .second {
+            color: #9A9A9A;
+        }
+
+        i {
+            font-style: normal;
+        }
+
+        .modalbg {
+            background: rgba(0, 0, 0, 0.4);
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 999999;
+
+        }
+
+        .modalbg>div {
+            height: 100%;
+        }
+
+        .modalbg>div>div {
+            height: 118px;
+            width: 270px;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 8px;
+            position: fixed;
+            top: 50%;
+            margin-top: -59px;
+            left: 50%;
+            margin-left: -135px;
+        }
+
+        .modalbg>div>div>:nth-of-type(1) {
+            margin: 22px auto 26px;
+            text-align: center;
+            color: #333333;
+        }
+
+        .modalbg>div>div>:nth-of-type(3) {
+            text-align: center;
+            color: #365AF7;
+        }
+
+        .modalbg .line {
+            margin-bottom: 11px;
+            margin-top: 0;
+
+        }
+
+        .modalbgs>div>div {
+            height: 140px;
+            width: 270px;
+            background: rgba(255, 255, 255, 1);
+            border-radius: 8px;
+            position: fixed;
+            top: 50%;
+            margin-top: -70px;
+            left: 50%;
+            margin-left: -135px;
+        }
+        .mask{
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            z-index: 10;
+            background-color: rgba(255,255,255,0);
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="moceng" v-show="isRegister" class="mask"></div>
+        <div v-show="isRegister == 1"  class="modalbg">
+            <div>
+                <div>
+                    <div class="f-32">该手机号已被注册</div>
+                    <div class="line"></div>
+                    <div @click="download" class="f-32">下载APP</div>
+                </div>
+            </div>
+        </div>
+        <div v-show="isRegister == 2" class="modalbg modalbgs">
+            <div>
+                <div>
+                    <div class="f-32">恭喜您，注册成功！<br>快去下载app登录吧</div>
+                    <div class="line"></div>
+                    <div @click="download" class="f-32">我知道了</div>
+                </div>
+            </div>
+        </div>
+        <div class="top">
+            <img src="/public/images/bg_register.png" alt="">
+            <div class="modalBox">
+                <div>
+                    <div>
+                        <div class="title f-28">手机号</div>
+                        <input type="tel" v-model="telNum"  maxlength="11" placeholder="请输入手机号"
+                            class="tel caret-color f-34">
+                        <div class="line"></div>
+                        <div class="title f-28">验证码</div>
+                        <div class="yzm">
+                            <input type="tel" maxlength="6"    v-model="checkNum" placeholder="请输入验证码"
+                                class="number caret-color f-34">
+                            <div>
+                                <span v-show="!isShow" @click="getYzm" class="getYzm f-28">获取验证码</span>
+                                <span v-show="isShow" class="f-28 second"><i class="seconds">{{seconds}}</i>s重新获取</span>
+                            </div>
+                        </div>
+                        <div class="registerBox"><div @click="register" class="register f-34">立即注册</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <span class="f-26">点击立即注册表明已同意&ensp;</span>
+            <span @click="goProtocol" class="protocol f-26">《小银号注册协议》</span>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: function data() {
+                return {
+                    seconds: 60,
+                    isShow: false,
+                    telNum: '',
+                    checkNum: '',
+                    isRegister: 0,
+                    mobileType:'',
+                    title:'小银号',
+                    csrf:'',
+                };
+            },
+            watch: {
+                'telNum':'otherWatch',
+                'checkNum':'otherWatch'
+            },
+            mounted:function mounted() {
+                this.isIosOrAndroid();
+                // 去掉滚动
+                document.getElementById("moceng").ontouchstart = function (event) {
+                    document.getElementById("moceng").ontouchmove =function (event) {
+                        event.preventDefault();
+                        return false
+                    }
+                    event.preventDefault();
+                    return false
+                }
+                document.querySelector(".modalbg").ontouchstart = function (event) {
+                    document.querySelector(".modalbg").ontouchmove =function (event) {
+                        event.preventDefault();
+                        return false
+                    }
+                }
+
+                function getCookie(cookie_name) {
+                        var allcookies = document.cookie;
+                        //索引长度，开始索引的位置
+                        var cookie_pos = allcookies.indexOf(cookie_name);
+
+                        // 如果找到了索引，就代表cookie存在,否则不存在
+                        if (cookie_pos != -1) {
+                            // 把cookie_pos放在值的开始，只要给值加1即可
+                            //计算取cookie值得开始索引，加的1为“=”
+                            cookie_pos = cookie_pos + cookie_name.length + 1;
+                            //计算取cookie值得结束索引
+                            var cookie_end = allcookies.indexOf(";", cookie_pos);
+                            if (cookie_end == -1) {
+                                cookie_end = allcookies.length;
+                            }
+                            //得到想要的cookie的值
+                            var value = unescape(allcookies.substring(cookie_pos, cookie_end));
+                        }
+                        return value;
+                    }
+                    this.csrf = getCookie('csrfToken');
+            },
+            methods: {
+                otherWatch:function otherWatch(){
+                    this.telNum = this.telNum.replace(/[^\d]/g, '');
+                    this.checkNum = this.checkNum.replace(/[^\d]/g, '');
+                },
+                isIosOrAndroid:function isIosOrAndroid() {
+                    var browser = {
+                        versions: function () {
+                            var u = navigator.userAgent, app = navigator.appVersion;
+                            return {//移动终端浏览器版本信息
+                                ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                                android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或uc浏览器
+                            };
+                        }(),
+                        language: (navigator.browserLanguage || navigator.language).toLowerCase()
+                    };
+                    if (browser.versions.android === true) {
+                        this.mobileType = 'android'
+                        // window.installment_installment.updateTitle(this.title)
+                    } else {
+                        this.mobileType = 'ios'
+                        // window.webkit.messageHandlers.installment_installment.postMessage({ type: 'title', title: this.title });
+                    }
+                },
+                download(){
+                    window.location.href = "/download/download";
+                },
+                goProtocol: function goProtocol() {
+                    // 进入注册协议
+                    window.location.href = "/protocol/user-register-protocol";
+                },
+                register: function register() {
+                    var that = this;
+                    let reg = /^1\d{10}$/
+                    if (that.telNum.length !=11 || reg.test(that.telNum) == false) {
+                        that.$toast({
+                            message: '请输入11位手机号',
+                            position: 'bottom',
+                            duration: 1000
+                        });
+
+                        return false;
+                    }
+                    if (that.checkNum.length <= 0) {
+                        that.$toast({
+                            message: '请输入验证码',
+                            position: 'bottom',
+                            duration: 1000
+                        });
+                        return false;
+                    }
+                    $.post('/register/registerUser',{_csrf:that.csrf,mobile:that.telNum,authCode:that.checkNum}, function (result) {
+                        console.log(result)
+                        if(result.code == 200){
+                            that.isRegister = 2;
+                        }else if(result.code == 'R00001'){
+                            that.isRegister = 1;
+                        }else{
+                            that.$toast({
+                                message: result.msg,
+                                position: 'bottom',
+                                duration: 1000
+                            });
+                        }
+
+                    });
+                },
+                getYzm: function getYzm() {
+                    var that = this;
+                    let reg = /^1\d{10}$/
+                    if (that.telNum.length !=11 || reg.test(that.telNum) == false) {
+                        that.$toast({
+                            message: '请输入11位手机号',
+                            position: 'bottom',
+                            duration: 1000
+                        });
+                        return false;
+                    }
+                    console.log(that.csrf)
+                    $.post('/register/getCode',{_csrf:that.csrf,mobile:that.telNum}, function (result) {
+                        console.log(result)
+                        if(result.code == 200){
+                            that.$toast({
+                                message: result.msg,
+                                position: 'bottom',
+                                duration: 1000
+                            });
+                            that.isShow = true;
+                            var timer = setInterval(function () {
+                                that.seconds--;
+                                if (that.seconds == 0) {
+                                    clearInterval(timer);
+                                    that.isShow = false;
+                                    that.seconds = 60;
+                                }
+                            }, 1000);
+                        }else if(result.code == 'S00008'){
+                            that.isRegister = 1;
+                        }else{
+                            that.$toast({
+                                message: result.msg,
+                                position: 'bottom',
+                                duration: 1000
+                            });
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+    <script>
+    window.onload = function() {
+        // 阻止双击放大
+        var lastTouchEnd = 0;
+        document.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        });
+        document.addEventListener('touchend', function(event) {
+            var now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        // 阻止双指放大
+        document.addEventListener('gesturestart', function(event) {
+            event.preventDefault();
+        });
+    }
+    </script>
+</body>
+
+</html>
